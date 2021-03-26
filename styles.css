@@ -11,11 +11,18 @@ h1 {
 
 body {
     color: red;
+    background-color: rgb(217, 240, 243);
+    background-image: url("images/people3.jpg");
+    background-attachment: fixed;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 200px;
 }
 
 .box {
     height: 100px;
-    width: 50%;
+    width: 70%;
     margin: 20px;
     padding: 50px;
     border: 10px solid blue;
