@@ -1,0 +1,32 @@
+.blue {
+    color: blue;
+}
+
+h1 {
+    color: olivedrab;
+}
+h1 {
+    color: fuchsia;
+}
+
+body {
+    color: red;
+}
+
+.box {
+    height: 100px;
+    width: 50%;
+    margin: 20px;
+    padding: 50px;
+    border: 10px solid blue;
+    background-color: aqua;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+div {
+    background-color: lightgrey;
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+  }
