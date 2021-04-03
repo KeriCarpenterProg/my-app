@@ -5,12 +5,18 @@
     <meta name="viewport" content="width-device-width, intialize" />
     <meta name="keywords" content="HTML, CSS" />
     <meta name="description" content="50th web page" />
-    <title>My fiftieth web page</title>
+    <title>Testing things out</title>
+    <script type="text/javascript" src="js/index.js"></script>
     <style>
-      img {
+      img.header {
         width: 200px;
         border-radius: 100px;
         float: left;
+        margin-right: 10px;
+      }
+      img {
+        width: 200px;
+        border-radius: 30px;
         margin-right: 10px;
       }
       .username {
@@ -30,15 +36,23 @@
     <a href="page8.html">A Hand coded CSS Introduction Page</a>
     &nbsp;
     <a href="page2.html">Playing around with CSS</a>
-    <img src="images/9.jpg" />
+    <img class="header" src="images/9.jpg" />
     <h1>Keri Carpenter's Page</h1>
     <h2 class="username">this is font-size small</h2>
     <h3>3rd page</h3>
     <h4>Fourth page</h4>
     <p>I love to teach you <em>HTML</em> !</p>
     <h1>Links to pages in this directory:</h1>
-    <a href="page3.html">Page 3</a>
-    <a href="page4.html">Page 4</a>
-    <a href="page6.html">Page 6</a>
+    <ul>
+      <li><a href="page3.html">Page 3</a></li>
+      <li><a href="page4.html">Page 4</a></li>
+      <li><a href="page6.html">Page 6</a></li>
+    </ul>
+
+    <img src="images/people1.jpg" id="rainbow" />
+    <script>
+      console.log("We have made it to the script!");
+      fetch("rainbow.jpg").then((response) => {});
+    </script>
   </body>
 </html>
