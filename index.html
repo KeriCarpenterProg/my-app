@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <style>
       img.header {
-        width: 200px;
+        height: 300px;
         border-radius: 100px;
         float: left;
         margin-right: 10px;
@@ -42,6 +42,7 @@
     <h3>3rd page</h3>
     <h4>Fourth page</h4>
     <p>I love to teach you <em>HTML</em> !</p>
+    <h1>&nbsp;</h1>
     <h1>Links to pages in this directory:</h1>
     <ul>
       <li><a href="page3.html">Page 3</a></li>
@@ -49,10 +50,39 @@
       <li><a href="page6.html">Page 6</a></li>
     </ul>
 
-    <img src="images/people1.jpg" id="rainbow" />
+    <img src="images/people1.jpg" id="rainbow" width="50%" />
+    <!-- I did a tutorial on fetch on 4/3/21.  This was it:
+    https://youtu.be/tc8DU14qX6I -->
+
     <script>
-      console.log("We have made it to the script!");
-      fetch("rainbow.jpg").then((response) => {});
+      catchRainbow()
+        .then((response) => {
+          console.log("yay, it worked!");
+        })
+        .catch((error) => {
+          console.log("error!");
+          console.error(error);
+        });
+
+      async function catchRainbow() {
+        const response = await fetch("rainbow.jpg");
+        const blob = await response.blob();
+        document.getElementById("rainbow").src = URL.createObjectURL(blob);
+      }
+
+      // fetch("rainbow.jpg")
+      //     .then((response) => {
+      //       console.log(response);
+      //       return response.blob();
+      //     })
+      //     .then((test) => {
+      //       console.log(test);
+      //       document.getElementById("rainbow").src = URL.createObjectURL(test);
+      //     })
+      //     .catch((error) => {
+      //       console.log("error!");
+      //       console.error(error);
+      //     });
     </script>
   </body>
 </html>
