@@ -1,0 +1,23 @@
+
+
+section {
+    width: 50%;
+    border: 4px solid #d62929;
+    margin: 8px;
+    padding: 8px;
+  }
+
+  .right {
+      float:right;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .clearfix::after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both
