@@ -6,6 +6,7 @@
     <meta name="keywords" content="HTML, CSS" />
     <meta name="description" content="my web page" />
     <title>My fifty second web page</title>
+    <link href="styles3.css" rel="stylesheet" />
     <style>
       img {
         width: 200px;
@@ -24,28 +25,65 @@
     </style>
   </head>
   <body>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ratione eum
-      aperiam obcaecati commodi totam in harum quod? Quibusdam ducimus vero quas
-      at, porro soluta debitis repudiandae saepe aut quos recusandae optio
-      doloribus ab, dicta repellendus magnam fugiat modi reiciendis. Quae non
-      aspernatur eos eligendi facere culpa placeat odio sequi animi nostrum
-      sapiente dicta, vel repellendus ducimus. Atque unde deserunt omnis modi,
-      dignissimos molestias sequi obcaecati velit ea ipsum ipsa quo animi magnam
-      perferendis id possimus, qui assumenda et nisi ullam deleniti debitis odit
-      veniam? Quasi sequi aut libero exercitationem laudantium dolor, officiis
-      dolores impedit porro inventore qui magnam quas ullam nulla distinctio
-      nostrum delectus veritatis et velit! Labore, earum iure harum illum
-      laboriosam quis cupiditate. Quo neque quaerat facilis incidunt eveniet
-      tempora, sequi voluptatem magnam provident optio aliquam laboriosam ullam
-      nostrum in rerum impedit veniam, labore architecto doloremque totam
-      suscipit omnis alias modi similique. Aut consectetur, accusantium, ipsum
-      reprehenderit, hic est delectus voluptates vitae rem et veritatis sit
-      architecto fuga quaerat. Dolorem ipsa deleniti iusto nihil doloribus natus
-      debitis placeat quidem est distinctio harum consequuntur, corporis quod
-      autem officia provident nulla ullam. Architecto eveniet iste, inventore
-      laborum nesciunt ea vel quis eligendi reiciendis magni quo, error
-      suscipit, officia eaque.
-    </p>
+    <h1>Pokémon and the <code>float</code> Property</h1>
+
+    <section>
+      <img class="right" src="images/pokemon-sprite-1.png" />
+      <p>
+        I copied this exercise from
+        <a href="https://codesandbox.io/s/kowoln4347?file=/index.html:735-1080"
+          >this Code Sandbox</a
+        >
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ratione eum
+        aperiam obcaecati commodi totam in harum quod? Quibusdam ducimus vero
+        quas at, porro soluta debitis repudiandae saepe aut quos recusandae
+        optio doloribus ab, dicta repellendus magnam fugiat modi reiciendis.
+        Quae non aspernatur eos eligendi facere culpa placeat odio sequi animi
+        nostrum sapiente dicta, vel repellendus ducimus. Atque unde deserunt
+        omnis modi, dignissimos molestias sequi obcaecati velit ea ipsum ipsa
+        quo animi magnam perferendis id possimus, qui assumenda et nisi ullam
+        deleniti debitis odit veniam? Quasi sequi aut libero exercitationem
+        laudantium dolor, officiis dolores impedit porro inventore qui magnam
+        quas ullam nulla distinctio nostrum delectus veritatis et velit! Labore,
+        earum iure harum illum laboriosam quis cupiditate. Quo neque quaerat
+        facilis incidunt eveniet tempora, sequi voluptatem magnam provident
+        optio aliquam laboriosam ullam nostrum in rerum impedit veniam, labore
+        architecto doloremque totam suscipit omnis alias modi similique. Aut
+        consectetur, accusantium, ipsum reprehenderit, hic est delectus
+        voluptates vitae rem et veritatis sit architecto fuga quaerat. Dolorem
+        ipsa deleniti iusto nihil doloribus natus debitis placeat quidem est
+        distinctio harum consequuntur, corporis quod autem officia provident
+        nulla ullam. Architecto eveniet iste, inventore laborum nesciunt ea vel
+        quis eligendi reiciendis magni quo, error suscipit, officia eaque.
+      </p>
+      <!-- Clear Method #1: Add clear css property to empty div -->
+      <div style="clear: both"></div>
+    </section>
+    <section class="container right">
+      <h1>This is just a test</h1>
+    </section>
+
+    <section class="clear">
+      <img class="right" src="./images/pokemon-sprite-3.png" />
+      <h4>Zapdos #145 <span class="type type--electric">Electric</span></h4>
+      <!-- Clear Method #3: Add small bit of content and hide -->
+      <!-- Source: https://css-tricks.com/all-about-floats/#article-header-id-4 -->
+      <p class="clearfix">
+        A legendary bird Pokémon that is said to appear from clouds while
+        dropping enormous lightning bolts.
+      </p>
+    </section>
+
+    <!-- Clear Method #2: Use overflow css property -->
+    <section class="container right">
+      <img class="right" src="./images/pokemon-sprite-2.png" />
+      <h4>Charmander #004 <span class="type type--fire">Fire</span></h4>
+      <p>
+        Obviously prefers hot places. When it rains, steam is said to spout from
+        the tip of its tail.
+      </p>
+    </section>
   </body>
 </html>
