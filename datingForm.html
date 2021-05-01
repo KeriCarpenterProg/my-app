@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Keri Carpenter: Week 2 Online Dating Form Practice</title>
+  </head>
+  <body>
+    <h1>Enter Your Details for Our Dating Website</h1>
+    <form
+      action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata"
+      method="post"
+    >
+      <fieldset>
+        <legend>Your Face</legend>
+        <div>
+          <label for="avatar"> Upload Your Image:</label>
+          <input type="file" id="avatar" name="avatar" required />
+        </div>
+        <p>
+          Image Preview:
+          <img id="preview" width="500" src="" alt="" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Your Details</legend>
+        <div>
+          <label for="name"> Name:</label>
+          <input type="text" id="name" name="name" value="Your Full Name" />
+        </div>
+        <div>
+          Gender:
+          <label for="woman">Woman</label>
+          <input type="radio" id="woman" name="gender" value="woman" required />
+          <label for="man">Man</label>
+          <input type="radio" id="man" name="gender" value="man" />
+          <label for="nonbinary">Non-Binary</label>
+          <input type="radio" id="nonbinary" name="gender" value="nonbinary" />
+        </div>
+        <div>
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" />
+        </div>
+        <div>
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" />
+        </div>
+        <div>
+          <label for="color">Favorite Color</label>
+          <input type="color" id="color" name="color" />
+        </div>
+        <div>
+          <label for="country">Country</label>
+          <select name="country" id="country">
+            <option value="">Choose a country</option>
+            <option value="brazil">Brazil</option>
+            <option value="france">France</option>
+            <option value="japan">Japan</option>
+            <option value="libya">Libya</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+        <div>
+          <label for="salary">Salary</label>
+          <span class="range-caption">Poor</span>
+          <input type="range" id="salary" name="salary" min="0" max="100" />
+          <span class="range-caption">Rich</span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Your Contact Information</legend>
+        <div>
+          <label for="email"> Your Email: </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email Address"
+            required
+          />
+        </div>
+        <div>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div>
+          <label for="address">Address:</label>
+          <textarea name="address" id="address" cols="40" rows="3"></textarea>
+        </div>
+        <div>
+          Contact Method(s):
+          <input
+            type="checkbox"
+            id="contact"
+            name="emailCheckbox"
+            value="email"
+          />
+          <label for="emailCheckbox"> Email</label>
+          <input
+            type="checkbox"
+            id="contact"
+            name="phoneCheckbox"
+            value="email"
+          />
+          <label for="phoneCheckbox"> Phone</label>
+        </div>
+      </fieldset>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
