@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keri's Practice</title>
+  </head>
+  <body>
+    <h1>Magical Mystery Theater</h1>
+    <button type="button" onClick="buyTickets()">Purchase Tickets</button>
+    <script>
+      const GENERAL_ADMISSION_TICKET_COST = 20;
+      const CHILD_AND_SENIOR_TICKET_COST = 10;
+      const MATINEE_DISCOUNT = 3;
+
+      function getBaseTicketCost(age) {
+        if (age <= 12 || age >= 65) {
+          return CHILD_AND_SENIOR_TICKET_COST;
+        }
+        return GENERAL_ADMISSION_TICKET_COST;
+      }
+      function getDiscount(matinee) {
+        if (matinee === "y" || matinee === "yes") {
+          return MATINEE_DISCOUNT;
+        }
+        return 0;
+      }
+      function buyTickets() {
+        const age = prompt("What is your age?");
+        const matinee = prompt("Are you attending a matinee?  y for yes");
+        let cost = getBaseTicketCost(age);
+        let discount = getDiscount(matinee);
+        cost -= discount;
+
+        alert("Your ticket will cost " + cost);
+      }
+    </script>
+  </body>
+</html>
