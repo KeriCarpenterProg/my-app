@@ -8,6 +8,9 @@
   </head>
   <body>
     <h1>Magical Mystery Theater</h1>
+    <h4>Price</h4>
+    <p>$20 for adults</p>
+    <p>$10 for children 12 or under and adults 65+</p>
     <button type="button" onClick="buyTickets()">Purchase Tickets</button>
     <script>
       const GENERAL_ADMISSION_TICKET_COST = 20;
@@ -21,6 +24,7 @@
         return GENERAL_ADMISSION_TICKET_COST;
       }
       function getDiscount(matinee) {
+        matinee = matinee.toLowerCase();
         if (matinee === "y" || matinee === "yes") {
           return MATINEE_DISCOUNT;
         }
