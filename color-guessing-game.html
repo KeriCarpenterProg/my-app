@@ -13,6 +13,7 @@
       I will generate a random color from a pre-defined array of colors and you
       will guess which one got selected.
     </p>
+    <p>The randomly generated color is displayed in the console.</p>
     <p>
       There will be different types of output based on whether it matches or
       not.
@@ -56,7 +57,9 @@
           guess = prompt(
             "I am thinking of one of these colors:\n\n" +
               COLORS_ARRAY.join(", ") +
-              "\n\nWhat color am I thinking of?\n"
+              "\n\nWhat color am I thinking of?\n\nJust for reference, the randomly generated color is " +
+              target +
+              "\n\n"
           );
           numTries += 1;
           if (guess === null) return;
