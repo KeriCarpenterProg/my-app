@@ -17,8 +17,71 @@
       There will be different types of output based on whether it matches or
       not.
     </p>
+    <p>
+      After you guess the correct color, the background of the main page will
+      turn that color.
+    </p>
     <p>The interaction is all within an alert box.</p>
     <button type="button" onClick="runGame()">Start Game</button>
-    <script></script>
+    <script>
+      const COLORS_ARRAY = [
+        "blue",
+        "cyan",
+        "gold",
+        "gray",
+        "green",
+        "magenta",
+        "orange",
+        "red",
+        "white",
+        "yellow",
+      ];
+      let numTries = 0;
+      function runGame() {
+        let guess = "";
+        numTries = 0;
+        let correct = false;
+        let randomNumber = Math.random();
+        const targetIndex = Math.floor(randomNumber * COLORS_ARRAY.length);
+        const target = COLORS_ARRAY[targetIndex];
+        console.log(
+          "Index is " +
+            targetIndex +
+            ".  Value is " +
+            target +
+            " Is the value of correct false? " +
+            correct
+        );
+        do {
+          guess = prompt(
+            "I am thinking of one of these colors:\n\n" +
+              COLORS_ARRAY.join(", ") +
+              "\n\nWhat color am I thinking of?\n"
+          );
+          numTries += 1;
+          if (guess === null) return;
+          correct = checkGuess(guess, target);
+        } while (correct === false);
+      }
+
+      function checkGuess(guess, target) {
+        let correct = false;
+        if (!COLORS_ARRAY.includes(guess)) {
+          alert("That isn't a color in the array!");
+        } else if (guess > target) {
+          alert("Your guess is greater than the color.  Please guess again.");
+        } else if (guess < target) {
+          alert("Your guess is less than the target.  Please guess again.");
+        } else if (guess == target) {
+          document.body.style.backgroundColor = guess;
+          alert(
+            "You are right!  The number of tries you took to guess this was " +
+              numTries
+          );
+          correct = true;
+        }
+        return correct;
+      }
+    </script>
   </body>
 </html>
