@@ -51,8 +51,7 @@
         const leftSideImages = theLeftSide.cloneNode(true);
         leftSideImages.removeChild(leftSideImages.lastChild);
         theRightSide.appendChild(leftSideImages);
-        var clickThisChild = theLeftSide.lastChild;
-        clickThisChild.addEventListener("click", nextLevel);
+        theLeftSide.lastChild.addEventListener("click", nextLevel);
         document.body.addEventListener("click", gameOver);
       }
       function nextLevel() {
@@ -63,7 +62,7 @@
       function gameOver() {
         alert("Game Over!");
         // Construct 2 removeEventListener handler functions
-        clickThisChild.removeEventListener("click", nextLevel);
+        theLeftSide.lastChild.removeEventListener("click", nextLevel);
         document.body.removeEventListener("click", gameOver);
       }
     </script>
