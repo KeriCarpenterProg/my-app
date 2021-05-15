@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body onload="doSomething()">
+    <script>
+      function doSomething() {
+        const theImg = document.createElement("img");
+        theImg.src = "images/cat.jpg";
+        document.body.appendChild(theImg);
+        for (let i = 0; i < 10; i++) {
+          if (i === 5) continue;
+          if (i > 6) {
+            document.body.removeChild(document.body.lastElementChild);
+          } else {
+            const newImg = theImg.cloneNode();
+            document.body.appendChild(newImg);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
