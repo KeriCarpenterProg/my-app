@@ -6,16 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palindrome</title>
   </head>
-  <body>
+  <body onload="palindrome('R*AC(EC&A$R')">
     <h1>
       This is going to take a string and return true if it is a palindrome
     </h1>
     <script>
       function palindrome(str) {
-        console.log(str);
+        var regularExpression = /[\W]/g;
+        console.log("The String was " + str);
+        let lowerCase = str.toLowerCase().replace(regularExpression, "");
+        //  This is the example
+        // var reverseStr = lowRegStr.split('').reverse().join('');
+        let reverseString = lowerCase.split("").reverse().join("");
+        console.log(
+          "String reversed and all extra characters stripped out " +
+            reverseString
+        );
+        if (lowerCase === reverseString) {
+          console.log("true");
+        } else {
+          console.log("false");
+        }
+        return lowerCase === reverseString;
       }
-
-      palindrome();
     </script>
   </body>
 </html>
