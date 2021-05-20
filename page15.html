@@ -6,27 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palindrome</title>
   </head>
-  <body onload="palindrome('R*AC(EC&A$R')">
-    <h1>
-      This is going to take a string and return true if it is a palindrome
-    </h1>
+  <body>
+    <h1>Palindrome function</h1>
+    <p>
+      This javascript function takes a string and returns true if it is a
+      palindrome
+    </p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo11"></p>
+    <p id="demo2"></p>
+    <p id="demo3">This is example text.</p>
+    <p>Adding one more linee!</p>
     <script>
+      document.getElementById("demo").innerText =
+        "The String without converting to lower case and stripping all non alpha number characters out was\n";
+      var wordToReverse = window.prompt(
+        "Please provide me a word that might be a palindrome "
+      );
+      // var wordToReverse = "RAC#%^EC#$^AR";
+      document.getElementById("demo1").innerHTML = wordToReverse;
+
+      let trueOrFalse = palindrome(wordToReverse);
+      document.getElementById("demo2").innerHTML = trueOrFalse;
       function palindrome(str) {
         var regularExpression = /[\W]/g;
-        console.log("The String was " + str);
+
+        console.log(
+          "The String without converting to lower case and stripping all non alpha number characters out was\n" +
+            str
+        );
         let lowerCase = str.toLowerCase().replace(regularExpression, "");
-        //  This is the example
-        // var reverseStr = lowRegStr.split('').reverse().join('');
         let reverseString = lowerCase.split("").reverse().join("");
         console.log(
           "String reversed and all extra characters stripped out " +
             reverseString
         );
-        if (lowerCase === reverseString) {
-          console.log("true");
-        } else {
-          console.log("false");
-        }
+        document.getElementById("demo11").innerHTML =
+          "The String reversed and all extra characters stripped out was\n\n " +
+          reverseString;
         return lowerCase === reverseString;
       }
     </script>
