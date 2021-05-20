@@ -16,6 +16,7 @@
     <p id="demo1"></p>
     <p id="demo11"></p>
     <p id="demo2"></p>
+    <p id="demo3">This is example text.</p>
     <script>
       document.getElementById("demo").innerText =
         "The String without converting to lower case and stripping all non alpha number characters out was\n";
@@ -35,8 +36,6 @@
             str
         );
         let lowerCase = str.toLowerCase().replace(regularExpression, "");
-        //  This is the example
-        // var reverseStr = lowRegStr.split('').reverse().join('');
         let reverseString = lowerCase.split("").reverse().join("");
         console.log(
           "String reversed and all extra characters stripped out " +
@@ -45,11 +44,6 @@
         document.getElementById("demo11").innerHTML =
           "The String reversed and all extra characters stripped out was\n\n " +
           reverseString;
-        if (lowerCase === reverseString) {
-          console.log("true");
-        } else {
-          console.log("false");
-        }
         return lowerCase === reverseString;
       }
     </script>
