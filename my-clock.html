@@ -15,6 +15,12 @@
         var hourAngle = hour * 30;
         // Get SVG elements for the hands of the clock
         console.log(hourAngle);
+        // Grab the getElementById of the hour hand
+        var minhand = document.getElementById("minutehand");
+        var hourhand = document.getElementById("hourhand");
+        // Set an SVG attribute on them to move them around the clock facem
+        minhand.setAttribute("transform", "rotate(" + minangle + ", 50,50)");
+        hourhand.setAttribute("transform", "rotate(" + hourAngle + ",50,50)");
       }
     </script>
     <style>
@@ -52,6 +58,17 @@
   <body onLoad="updateTime()">
     <h1>Keri Building a Working Round Clock Face</h1>
     <svg id="clock" viewBox="0 0 100 100" width="500" height="500">
+      <defs>
+        <!-- Define a filter for drop-shadows -->
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur" />
+          <feOffset in="blur" dx="1" dy="1" result="shadow" />
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="shadow" />
+          </feMerge>
+        </filter>
+      </defs>
       <circle id="face" cx="50" cy="50" r="45" />
       <g id="ticks">
         <!-- 12 hour tick marks -->
@@ -76,7 +93,7 @@
         <text x="15" y="53">9</text>
       </g>
       <!-- Draw hands pointing straight up. We rotate them in the code. -->
-      <g id="hands">
+      <g id="hands" filter="url(#shadow)">
         <!-- Add shadows to the hands-->
         <line id="hourhand" x1="50" y1="50" x2="50" y2="24" />
         <line id="minutehand" x1="50" y1="50" x2="50" y2="20" />
