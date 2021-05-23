@@ -1,7 +1,10 @@
-# My app
+# My app website
 
-This app is a playground for Keri Carpenter to test out all sorts of things that she is picking up.
+This website is a playground for Keri Carpenter to test out all sorts of programming knowledge that she is trying out.
 
-This is not a finished app or anything, but might become one during my next class.
+This website will just remain a playground to test things out while it is being used.  At some point, I'm sure I will be moving on, but in Summer 2021 it is pretty current.
 
+This is my 3rd commit on this pull request.
+
+updated 5/23/21 Keri Carpenter
 written 4/3/21 Keri Carpenter
