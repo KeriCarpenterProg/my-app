@@ -2,12 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, intialize" />
+    <meta name="viewport" content="width-device-width" />
     <meta name="keywords" content="HTML, CSS" />
     <meta name="description" content="50,000th web page" />
     <title>Keri Carpenter's Practice Page</title>
     <script type="text/javascript" src="js/index.js"></script>
     <style>
+      body {
+        font-size: x-large;
+      }
       img.header {
         height: 300px;
         border-radius: 100px;
@@ -21,39 +24,177 @@
       }
       .username {
         font-weight: bold;
-        font-size: small;
+        font-size: x-large;
       }
       em {
         color: red;
         font-style: normal;
       }
+      #toc_container {
+        background: #f9f9f9 none repeat scroll 0 0;
+        border: 1px solid #aaa;
+        display: table;
+        font-size: 100%;
+        margin-bottom: 1em;
+        padding: 20px;
+        width: auto;
+      }
+
+      .toc_title {
+        font-weight: 700;
+        text-align: center;
+      }
+
+      #toc_container li,
+      #toc_container ul,
+      #toc_container ul li {
+        list-style: outside none none !important;
+      }
     </style>
   </head>
   <body>
-    <a href="company/about.html">Basic Page</a>
-    &nbsp;
-    <a href="page9.html">Relatively Pretty Page with some reasonable layout</a>
-    &nbsp;
-    <a href="page8.html">A Hand coded CSS Introduction Page</a>
-    &nbsp;
-    <a href="page2.html">Playing around with CSS</a>
-    &nbsp;
-    <a href="page10.html"
-      >Using Fetch to display data from the Random User API</a
-    >
-    <img class="header" src="images/9.jpg" />
+    <div id="toc_container">
+      <p class="toc_title">Recent Projects</p>
+      <ul class="toc_list">
+        <li>
+          May 2021
+          <ul>
+            <li>
+              <a href="my-clock.html"
+                >Drawing and updating a clock face with An Analog Clock for
+                Practice</a
+              >
+            </li>
+            <li>
+              <a href="datingForm.html"
+                >Form Practice with a Dating Form for NuCamp Class</a
+              >
+            </li>
+            <li>
+              <a href="color-guessing-game.html"
+                >Take input and analyze it Color Guessing Gamee for NuCamp
+                Class</a
+              >
+            </li>
+            <li>
+              <a href="Profile.html">Keri's Profile page for NuCamp Class</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          April 2021
+          <ul>
+            <li>
+              <a href="matching-game.html"
+                >Cute matching game for NuCamp Class</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          March 2021
+          <ul>
+            <li>
+              <a href="surveyForm.html"
+                >Form practice with straight HTML no Javascript or CSS</a
+              >
+            </li>
+            <li>
+              <a href="theater.html"
+                >Use Javascript to calculate a ticket price</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          February 2021
+          <ul>
+            <li>
+              <a href="locating-nodes.html"
+                >Project that uses getElementById, etc. to change nodes</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Earlier
+          <ul>
+            <li>
+              <a href="javascript-helloworld.html"
+                >Javascript Hello World Button for fun</a
+              >
+            </li>
+            <li>
+              <a href="page2.html">page2.html</a>
+            </li>
+            <li>
+              <a href="page3.html">page3.html</a>
+            </li>
+            <li>
+              <a href="page4.html">page4.html</a>
+            </li>
+            <li>
+              <a href="page6.html">page6.html</a>
+            </li>
+            <li>
+              <a href="page7.html">page7.html</a>
+            </li>
+            <li>
+              <a href="page8.html">page8.html</a>
+            </li>
+            <li>
+              <a href="page9.html">page9.html</a>
+            </li>
+            <li>
+              <a href="page10.html">page10.html</a>
+            </li>
+            <li>
+              <a href="page12.html">page12.html</a>
+            </li>
+            <li>
+              <a href="page13.html">page13.html</a>
+            </li>
+            <li>
+              <a href="page15.html">page15.html</a>
+            </li>
+            <li>
+              <a href="company/about.html">Basic Page</a>
+            </li>
+            <li>
+              <a href="page9.html"
+                >Relatively Pretty Page with some reasonable layout</a
+              >
+            </li>
+            <li>
+              <a href="page8.html">A Hand coded CSS Introduction Page</a>
+            </li>
+            <li>
+              <a href="page10.html"
+                >Using Fetch to display data from the Random User API</a
+              >
+            </li>
+            <li>
+              <a href="page2.html">Playing around with CSS</a>
+            </li>
+            <li>
+              <a href="page2.html">Playing around with CSS</a>
+            </li>
+            <li>
+              <a href="page2.html">Playing around with CSS</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <img class="header" src="images/keri3.jpg" />
     <h1>Keri Carpenter's Page</h1>
-    <h2 class="username">this is font-size small</h2>
-    <h3>3rd page</h3>
-    <h4>Fourth page</h4>
     <p>I love to teach you <em>HTML</em> !</p>
-    <h1>&nbsp;</h1>
     <h1>Links to pages in this directory:</h1>
     <ul>
       <li><a href="page3.html">Page 3</a></li>
       <li><a href="page4.html">Page 4</a></li>
       <li><a href="page6.html">Page 6</a></li>
-      <li><a href="profile.html">Keri's Profile</a></li>
     </ul>
 
     <img src="images/people1.jpg" id="rainbow" width="50%" />
@@ -75,20 +216,6 @@
         const blob = await response.blob();
         document.getElementById("rainbow").src = URL.createObjectURL(blob);
       }
-
-      // fetch("rainbow.jpg")
-      //     .then((response) => {
-      //       console.log(response);
-      //       return response.blob();
-      //     })
-      //     .then((test) => {
-      //       console.log(test);
-      //       document.getElementById("rainbow").src = URL.createObjectURL(test);
-      //     })
-      //     .catch((error) => {
-      //       console.log("error!");
-      //       console.error(error);
-      //     });
     </script>
   </body>
 </html>
