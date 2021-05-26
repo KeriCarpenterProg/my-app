@@ -8,3 +8,6 @@ This is my 3rd commit on this pull request.
 
 updated 5/23/21 Keri Carpenter
 written 4/3/21 Keri Carpenter
+
+Hi Keri! I think I am getting the hang of this.
+Just adding some text here to see if it worked, crossing my fingers! 
