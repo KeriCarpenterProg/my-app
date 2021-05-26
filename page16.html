@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse a string</title>
+  </head>
+  <body>
+    <h1>Reverse a String</h1>
+    <p>
+      This javascript function takes a string and reverses it. Assumably without
+      using .reverse();
+    </p>
+    <p>
+      The function will ask for input and then the result will be in the
+      console.
+    </p>
+    <p id="line1"></p>
+    <p id="line2"></p>
+    <p id="line3"></p>
+    <p id="line4"></p>
+    <p id="line5"></p>
+    <p></p>
+    <script>
+      function reverseString(str) {
+        // empty string
+        let newString = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          newString += str[i];
+        }
+        return newString;
+      }
+
+      // take input from the user
+      const string = prompt("Enter a string: ");
+
+      const result = reverseString(string);
+      console.log(result);
+    </script>
+  </body>
+</html>
