@@ -31,6 +31,7 @@
     <h1>Page that takes input and changes text via javascript</h1>
     <p>This is an example page that I grabbed from a site by David Flanagan</p>
     <p>
+      <p>This is just cut and pasted from that site.  <a href="page18.html"></a>I will be constructing it myself.</p>
       Here is a link to
       <a href="https://github.com/davidflanagan/javascript6_examples"
         >the main site that has a ton of examples.
@@ -141,13 +142,13 @@
           // Save the user's input so we can restore it the next time they visit
           save(amount.value, apr.value, years.value, zipcode.value);
 
-          // Advertise: find and display local lenders, but ignore network errors
-          try {
-            // Catch any errors that occur within these curly braces
-            getLenders(amount.value, apr.value, years.value, zipcode.value);
-          } catch (e) {
-            /* And ignore those errors */
-          }
+          // // Advertise: find and display local lenders, but ignore network errors
+          // try {
+          //   // Catch any errors that occur within these curly braces
+          //   getLenders(amount.value, apr.value, years.value, zipcode.value);
+          // } catch (e) {
+          //   /* And ignore those errors */
+          // }
 
           // Finally, chart loan balance, and interest and equity payments
           chart(principal, interest, monthly, payments);
