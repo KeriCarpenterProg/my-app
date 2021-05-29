@@ -1,5 +1,8 @@
 const body = document.body;
-const div = document.createElement('div');
-// div.innerText = "Hello World!";
-div.textContent = "hello world 2";
-body.append(div);
+const div = document.querySelector("div");
+const spanHi = document.querySelector("#hi");
+const spanBye = document.querySelector("#bye");
+spanBye.remove();
+div.append(spanBye);
+
+spanHi.removeAttribute("id");
