@@ -1,0 +1,20 @@
+.content {
+    text-align: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 30%;
+}
+.green {
+    color: green;
+}
+.black {
+    color: black;
+}
+body {
+
+    background-image: url("../images/Abstract-Ambient-Light-Background-Day-Blue.jpg");
+    background-size: cover;
+    opacity: 90%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
