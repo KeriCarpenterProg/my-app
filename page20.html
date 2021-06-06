@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM practice</title>
+    <style>
+        body > h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hello2">Hello 1</h1>
+    <h1>Hello 2
+    </h1>
+    <div id="hello">
+        <h1>Hello 3</h1>
+    </div>
+    <h1 id="4">Hello 4</h1>
+    <br>
+    <h1>My hypothesis is that lines after this will change from Hello X</h1>
+    <br>
+    <h2>Hello 5</h2>
+    <h2>Hello 6</h2>
+    <h2>Hello 7</h2>
+    
+    <script>
+        let printOut = "works!";
+        function sayHello() {
+            document.getElementById('hello2').innerHTML = "innerHTML " + printOut;
+        }
+        sayHello();
+        printOut = sayHello.toString();
+        console.log(printOut);
+        printOut = document.getElementById.toString();
+        console.log(printOut);        
+        document.getElementById('hello').innerText = "I changed this text string from Hello World to this using innerText";
+        printOut = document.querySelector('h1').innerHTML;
+        document.getElementById('4').innerHTML = "I used innerHTML to change this to " + printOut;
+        printOut = [...document.querySelectorAll('h2')];
+        console.log(printOut[0]);
+        printOut[0].innerText = "Keri Rocks!";
+        for(i=0; i< printOut.length; i++){
+            printOut[i].innerText = "Keri rocks " + " hard! " + i ;
+        }
+
+        printOut = [1,2,3].map(elem => elem ** 2);
+        console.log("My hypothesis is that this will console.log 1,4,9");
+        console.log(printOut);
+
+
+    </script>
+</body>
+</html>

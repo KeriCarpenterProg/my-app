@@ -23,7 +23,25 @@ const items = [
     {   name:  "Computer",  price: 1000 },
     {   name:  "Keyboard",  price: 25 }
 ];
-
+const newArr = [5,7,8,9,3,2,1];
+const includesTwo = newArr.includes(5);
+console.log("This is the includes method");
+console.log(includesTwo);
+console.log("using reduce method");
+const total = items.reduce((currentTotal, item) => {
+    return item.price+currentTotal;
+},0);
+console.log(total);
+console.log("true if any items.price < 100");
+const hasInexpensiveItems = items.some((item) => {
+    return item.price <= 100;
+})
+console.log(hasInexpensiveItems);
+console.log("This is the For Each function");
+items.forEach((item) => {
+    console.log(item.name);
+})
+console.log("Using the find method to return book's name")
 const foundItem = items.find((item) => {
     return item.name === "Book";
 });
