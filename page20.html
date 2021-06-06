@@ -12,6 +12,7 @@
     </style>
 </head>
 <body>
+    <h1>This is the <a href="https://youtu.be/_wvi4Srvggg">VIDEO</a> I followed for this tutorial.</h1>
     <h1 id="hello2">Hello 1</h1>
     <h1>Hello 2
     </h1>
@@ -25,6 +26,7 @@
     <h2>Hello 5</h2>
     <h2>Hello 6</h2>
     <h2>Hello 7</h2>
+    <h3>Keri Carpenter</h3>
     
     <script>
         let printOut = "works!";
@@ -45,11 +47,19 @@
         for(i=0; i< printOut.length; i++){
             printOut[i].innerText = "Keri rocks " + " hard! " + i ;
         }
-
+        printOut[2].remove();
+        setTimeout(
+            () => {
+            console.log("It works after awhile.")
+        }, 3000)
+ 
         printOut = [1,2,3].map(elem => elem ** 2);
         console.log("My hypothesis is that this will console.log 1,4,9");
         console.log(printOut);
-
+        const p = document.querySelector('h1');
+        p.setAttribute('hello', 'world');
+        p.setAttribute('style','background-color:yellow');
+       
 
     </script>
 </body>
