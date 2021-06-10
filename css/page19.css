@@ -2,7 +2,7 @@
     text-align: center;
     margin-right: 20%;
     margin-left: 20%;
-    margin-top: 30%;
+    margin-top: 2%;
 }
 .green {
     color: green;
@@ -17,4 +17,11 @@ body {
     opacity: 90%;
     background-repeat: no-repeat;
     background-position: left top;
+}
+.input-control {
+    width: 200px;
+    text-align: center;
+}
+h3 {
+    color: rgb(8, 83, 33);
 }

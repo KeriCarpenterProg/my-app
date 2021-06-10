@@ -9,22 +9,28 @@
     <link rel="stylesheet" href="css/page19.css">
   </head>
   <body>
-    <p>Note:  I made it to time 13:00 in <a href="https://youtu.be/9XRufzemZNc">this video</a> .  I was starting the CSS.  Haven't gotten to the javascript yet.  It's 36 minutes long.</p>
  <div class="content">  
-    <h1>My Score Keeper</h1>
+   <h1>Keri Carpenter's</h1>
+    <h1>Score Keeping application</h1>
+    <h3>Curent Score:</h3>
  <h3>
-      Score:
-      <span id='score1'>0</span>
-      to
+      Player 1 : 
+      <span id='score1'>0</span>   </h3>
+       <button type="submit" class="btn btn-outline-secondary" id = "counter1">Player 1 Goal</button>
+   
+      <h3>
+      Player 2 :
       <span id='score2'>0</span>
     </h3>
+    <button type="submit" class="btn btn-outline-secondary" id = "counter2">Player 2 Goal</button>
+    <p style="height:20px">&nbsp;</p>
     <div class="form-group">
-    <button type="submit" class="btn btn-outline-secondary" id = "counter1">Player1</button>
-    <button type="submit" class="btn btn-outline-secondary" id = "counter2">Player2</button>
     <button class="btn btn-danger" id="reset">Reset</button>
   </div>
+  <p>&nbsp;</p>
+  <p>Enter the score that will win the Game:</p>
   <div class="form-group">
-    <input type="number" id="limit" name="limit" value="5" class="form-control">
+    <input type="number" id="limit" name="limit" value="5" width="50" class="input-control"></input>
   </div>
   <h3>The winner is: <span id="winner"></span></h3>
 </div>
