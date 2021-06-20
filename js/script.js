@@ -62,5 +62,5 @@ console.log(filteredItems);
 const itemNames = items.map((items) => {
     return items.name;
 })
-console.log("Map returns an array of just item names here");
+console.log("Map takes a bunch of objects and iterates through the objects.names and returns an array of just item names here".  It sort of creates an array out of a bunch of objects with multiple properties);
 console.log(itemNames);
