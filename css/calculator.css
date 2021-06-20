@@ -1,15 +1,16 @@
 *,*::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background: #DCE35B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 1rem;
+    margin: 1rem;
+    background: #f7ff00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 
 }
 
@@ -24,8 +25,8 @@ body {
 
 .calculator-grid > button {
     cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
+    font-size: 3rem;
+    border: 5px solid white;
     outline: none;
     background-color: rgba(255,255,255,.75);
 
