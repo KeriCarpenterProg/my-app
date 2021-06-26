@@ -15,12 +15,14 @@ class Calculator {
     }
 
     delete() {
-        console.log("Before slicing -1 "+ this.currentOperand);
         this.currentOperand = this.currentOperand.toString().slice(0,-1);
-        console.log("After sliceing -1 "+this.currentOperand);
     }
 
     appendNumber(number) {
+        if(wasEqual === true) {
+            this.currentOperand = '';
+            wasEqual = false;
+        }
         if(number === '.' && this.currentOperand.includes('.')) return;
         if(isNaN(this.currentOperand)) 
         { 
@@ -80,7 +82,7 @@ class Calculator {
             })
         }
         if (decimalDigits != null) {
-            return `${integereDisplay}.${decimalDigits}`
+            return `${integerDisplay}.${decimalDigits}`
         } else {
             return integerDisplay;
         }
@@ -108,7 +110,7 @@ const deleteButton = document.querySelector('[data-delete]');
 const allClearButton = document.querySelector('[data-all-clear]');
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 const previousOperandTextElement = document.querySelector('[data-previous-operand]');
-
+let wasEqual = false;
 
 const calculator = new Calculator(previousOperandTextElement,
     currentOperandTextElement);
@@ -130,15 +132,8 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', () => {
     calculator.compute();
     calculator.updateDisplay();
-    // STOPPED HERE!  How do I clear this?????? This is not working yet.  I just added this but didn't test it.
- 
-    this.currentOperand = '';
-
-    this.previousOperand = '';
-    this.operation = undefined;
-    console.log("Previous Number is "+ this.previousOperand);
-    console.log("Current Number is "+ this.currentOperand);
-    console.log("The saved operation is " + this.operation);
+    // This is a hack I used because the numbers weren't clearing after equals.
+    wasEqual = true;
 })
 
 allClearButton.addEventListener('click', () => {

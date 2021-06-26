@@ -33,11 +33,14 @@
       #toc_container {
         background: #f9f9f9 none repeat scroll 0 0;
         border: 1px solid #aaa;
-        display: table;
+        display: flex;  
+        flex-flow: row wrap;
+        align-content: center;
+        font-weight: bold;
         font-size: 100%;
         margin-bottom: 1em;
         padding: 20px;
-        width: auto;
+        width: 618px;
       }
 
       .toc_title {
@@ -61,16 +64,20 @@
       I try to keep current list of next steps.  Once I knock them off, I demote them to the archives.
     </p>
     <div id="toc_container">
-      <p class="toc_title">Next Steps</p>
+      <h2 class="toc_title">Next Steps</h2>
       <p>This is a list of no more than 3 next steps or ideas of next steps.</p>
       <ol>
- 
-</ul></li>
-
-</ul></li>
-
-</ul></li>
-<li>Stopped at 1:49 of 2:05 and doing the javascript.  Website CSS and javascript tutorial from Brian Designs.  2:05:00 2 hours.  less than 1 years old. </li>
+<li>Build 7 Javascript games.  free code camp.  1 hour 49 minutes</li>
+          <ul>
+            <li>
+              <a href="https://youtu.be/lhNdUVh3qCc" target="_blank">Video</a> 1 hr 49 min.
+            </li>
+          <li>
+            <a href="memory.html" target="_blank">The Code</a> I finished memory and whack a mole.
+            
+          </li>
+          </ul>  
+  <li>Website CSS and javascript tutorial from Brian Designs.  2:05:00 2 hours.  less than 1 years old. </li>
           <ul>
             <li>
               <a href="https://youtu.be/3-2Pj5hxwrw" target="_blank">Video</a> 2 hours total
@@ -80,21 +87,12 @@
             
           </li>
           </ul>  
-          <li>Build 7 Javascript games.  free code camp.  1 hour 49 minutes</li>
-          <ul>
-            <li>
-              <a href="https://youtu.be/lhNdUVh3qCc" target="_blank">Video</a> 38 minutes
-            </li>
-          <li>
-            <a href="page24.html" target="_blank">The Code</a> I haven't started this 6/12/21.
-            
-          </li>
-          </ul>  
+  
 <li> <a href="https://youtu.be/nYYdmqauP6w">Video Story</a>    of a guy who became a programmer at 45.  Watched till 9min in.  Just in the gaps.</li>
 <li>Look for a Typescript tutorial.</li>
 
           <li>Bootstrap tutorial.  
-             Already did this.  Do it again.  1 years old. </li>
+             Already did this but I deleted it.  Do it again.  1 years old. </li>
           <ul>
             <li>
               <a href="https://youtu.be/TJF4ldO91n4" target="_blank">Video</a> 2 hours total.
@@ -138,14 +136,33 @@
   <li>databases -- postgress -- google -- setting them up, getting data in, getting data out</li>
   <li>CSS practice</li>
   <li>Very familiar, comfortable, confident with 20 javascript methods</li>
+  <li>Good printed <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox </a> explanation</li>
 </ul>
     </div>
     <div id="toc_container">
       <p class="toc_title">Recent Projects</p>
       <ul class="toc_list">
-        <li>
           June 2021
-          <ul>
+            <li>Whack A Mole Game. Game 2 of 7. By this girl Ana.</li>
+            <ul>
+            <li>
+            <a href="https://youtu.be/lhNdUVh3qCc" target="_blank">Video</a> 1:49 total
+          </li>
+          <li>
+          <a href="whackamole.html" target="_blank">The Code</a> Finished.  
+          </li>
+          </ul>
+
+            <li>Memory Game. Game 1 of 7. By this girl Ana.</li>
+            <ul>
+            <li>
+            <a href="https://youtu.be/lhNdUVh3qCc" target="_blank">Video</a> 1 hour 49 total
+          </li>
+          <li>
+          <a href="memory.html" target="_blank">The Code</a> Finished.  
+    
+          </li>
+          </ul>  
             <li>Build a Calculator. Web Dev Simplified.  Done.</li>
   <ul>
     <li>
@@ -369,14 +386,7 @@
     </div>
 
     <img class="header" src="images/keri3.jpg" />
-
-    <p>I love to teach you <em>HTML</em> !</p>
-    <h1>Links to pages in this directory:</h1>
-    <ul>
-      <li><a href="page3.html">Page 3</a></li>
-      <li><a href="page4.html">Page 4</a></li>
-      <li><a href="page6.html">Page 6</a></li>
-    </ul>
+  
 
     <img src="images/people1.jpg" id="rainbow" width="50%" />
     <!-- I did a tutorial on fetch on 4/3/21.  This was it:
@@ -393,7 +403,7 @@
         });
 
       async function catchRainbow() {
-        const response = await fetch("rainbow.jpg");
+        const response = await fetch("images/rainbow.jpg");
         const blob = await response.blob();
         document.getElementById("rainbow").src = URL.createObjectURL(blob);
       }
