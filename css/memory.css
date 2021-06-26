@@ -1,0 +1,88 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* This is the header naviagtion area */
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    /* This aligns the content to
+    the end line on the main axis */
+    justify-content: flex-end;
+    background: rgb(97, 173, 179);
+    list-style: none;
+    margin: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #046164;
+  }
+
+@media all and (max-width:800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+    
+}
+
+@media all and (max-width: 600px) {
+    .navigation {
+       flex-flow: column wrap;
+       padding: 0;
+    }
+    .navigation a {
+        text-align: center;
+
+    }
+}
+.topText {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center; 
+    /* flex: 1 100%; */
+    background: lightgrey;
+}
+
+.header {
+    flex: 100%;
+}
+
+/* This is the portion the teacher taught me */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+}
+
+  /* This is the portion I did all by myself!
+  I'm learning here and there! */
+.kerigrid {
+   display: flex;
+   flex-wrap: wrap;
+   height: 100px;
+   width: 400px;
+   padding-bottom: 200px;
+}
+
+.keri-grid-item {
+    background: orange;
+    /* padding: 5px; */
+    width: 100px;
+    height: 100px;
+    /* margin-top: 10px; */
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+  }

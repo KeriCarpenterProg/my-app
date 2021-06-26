@@ -1,0 +1,29 @@
+* {
+    text-align: center; 
+    background: lightgrey;
+}
+
+.grid {
+    display: flex;  
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center; 
+    /* flex: 1 100%; */
+    background: lightgrey;
+    margin: auto;
+    width: 618px;
+    height: 619px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+}
+
+.mole {
+    background-image: url('../images/pizza.png');
+    background-size: cover;
+}

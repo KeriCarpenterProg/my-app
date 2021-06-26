@@ -8,12 +8,15 @@
         color: orange;
       }
     </style>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <h1 class="blue" style="color: rgb(11, 194, 36)">Introduction to CSS</h1>
+    <h1 id="0">0</h1>
+    <h1 id="1">1</h1>
+    <h1 id="2">2</h1>
+    <h1 id="3">3</h1>
     <p>This is an introduction to CSS</p>
-    <h1>This should be orange.</h1>
     <div class="box">
       This is my first box. Lorem ipsum dolor sit amet consectetur adipisicing
       elit. Aliquam adipisci maxime, consequatur voluptate eveniet asperiores
@@ -28,5 +31,94 @@
       fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
       sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
+    <div class="playing">What about this?</div>
+    <div class="blue">1</div>
+    <script>
+      // let str = "Keri,Cary,Langton,Jack";
+      // var res = str.split(",");
+      // for(i=0;i<res.length;i++){
+      //   console.log(res[i]);
+      // }
+      // var slicedArray = res.slice(0,-2);
+      // slicedArray.forEach(element => console.log(element));
+      // var printString = slicedArray.join(', ');
+      // console.log(printString);
+      // let printScreen = document.querySelector('.blue');
+      // printScreen.innerText = printString;
+      // let printScreen2 = document.querySelector('.box');
+      // printScreen2.innerText = res[3];
+      // let printScreen3 = document.querySelector('.playing');
+      // console.log(printScreen3.textContent);
+      // printScreen3.textContent = str;
+
+        // var str = "The Quick Brown Fox";
+        // var res = str.split("");
+        // // res.forEach(element => console.log(element));
+        // var printString = res.join('');
+        // console.log("The expected output is the entire string together ");
+        // console.log(printString);
+        // let printScreen = document.getElementById('1');
+        // printScreen.textContent = "The String is "+printString;
+        // var arr = str.split(" ");
+        // arr.forEach((element, index) => console.log(arr[index]+" "+ index));
+
+        // ForEach with all three parameters,
+        // the "element" meaning the item we are looking at right now
+        // the index which goes up one as they iterate through the array like for
+        // the array which is the entire array that you can use
+        // I do this by calling a function called iterate that has all the parameters
+        // const colors = ['blue', 'green', 'red', 'yellow'];
+        // let printScreen;
+        // function iterate(item,index, array) {
+        //   console.log("The Item is "+ item);
+        //   console.log("The index is "+ index);
+        //   console.log("The "+index+" item in the array is "+array[index]);
+        //   printScreen = document.getElementById(index);
+        //   printScreen.textContent = item;
+        // }
+        // colors.forEach(iterate);
+
+
+        //next I should do map
+        // var numbers = [65,44,12,4];
+        // var newarray = numbers.map(myFunction);
+
+        // function myFunction(num) {
+        //   return num * 10;
+        // }
+
+        // document.getElementById('0').textContent = "Array of numbers multiplied by 10 is "+newarray;
+
+        let customers = [
+          {firstname: "Keri",
+        lastname: "Carpenter"},
+          {firstname: "Cary",
+        lastname: "White"},
+          {firstname: "Langton",
+        lastname: "Carpenter"},
+          {firstname: "Jack",
+        lastname: "White"}
+        ];
+        let string = "";
+        
+        function fullname (element,index, array) {
+         console.log("The element is "+ element.firstname + " " + element.lastname + " And the index is "+index);
+          console.log("The "+index+" item in the array is "+array[index].firstname);
+          string = `Customer\'s name is ${element.firstname} ${element.lastname}`;
+          document.getElementById(index).textContent = string;
+          console.log(string); 
+        }
+
+        // let customersFullname = customers.map(function(element, index, array) {
+        //   // console.log("The element is "+ element.firstname + " " + element.lastname + " And the index is "+index);
+        //   // console.log("The "+index+" item in the array is "+array[index].firstname);
+        //   string = `The customer\'s full name is ${element.firstname} ${element.lastname}`;
+        //   document.getElementById(index).textContent = string;
+        //   // console.log(string);
+
+        // });
+
+        let customersFullname = customers.map(fullname);
+    </script>
   </body>
 </html>
