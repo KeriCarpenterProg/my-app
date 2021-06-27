@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1 class="blue" style="color: rgb(11, 194, 36)">Introduction to CSS</h1>
+    <h1 class="blue" style="color: rgb(11, 194, 36)">Testing/practicing javascript methods</h1>
+    <p>.forEach, .map, split, join array </p>
     <h1 id="0">0</h1>
     <h1 id="1">1</h1>
     <h1 id="2">2</h1>
@@ -106,7 +107,7 @@
           console.log("The "+index+" item in the array is "+array[index].firstname);
           string = `Customer\'s name is ${element.firstname} ${element.lastname}`;
           document.getElementById(index).textContent = string;
-          console.log(string); 
+          console.log(this); 
         }
 
         // let customersFullname = customers.map(function(element, index, array) {
@@ -118,7 +119,7 @@
 
         // });
 
-        let customersFullname = customers.map(fullname);
+        let customersFullname = customers.map(fullname,80);
     </script>
   </body>
 </html>
