@@ -24,4 +24,4 @@ Keri is making a change on 6/20/21.  My hypothesis is that it will make a PR on 
 
 6/26/21 Keri is adding one more line in here!
 
-6/26/21 Keri is adding a seond line in here on her own repo!
+6/26/21 Keri is adding a second line in here on her own repo!
