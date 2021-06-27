@@ -21,3 +21,7 @@ Hi Tim!  these are some changes that I am submitting on 6/6/21 from Keri to see 
 Just so you know, somehow your changes above got submitted on my repo too, so I'm thinking that even once you clone it there is some connection.  I'm sort of testing that now.
 
 Keri is making a change on 6/20/21.  My hypothesis is that it will make a PR on Tim Reid's version of "my" repo.  I further hypothesize that it will be committed on my repo as a patch, probably patch-3, automatically.  Let's see what happens.
+
+6/26/21 Keri is adding one more line in here!
+
+6/26/21 Keri is adding a second line in here on her own repo!
