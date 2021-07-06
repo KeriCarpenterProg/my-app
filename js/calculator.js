@@ -19,10 +19,10 @@ class Calculator {
     }
 
     appendNumber(number) {
-        if(wasEqual === true) {
-            this.currentOperand = '';
-            wasEqual = false;
-        }
+        // if(wasEqual === true) {
+        //     this.currentOperand = '';
+        //     wasEqual = false;
+        // }
         if(number === '.' && this.currentOperand.includes('.')) return;
         if(isNaN(this.currentOperand)) 
         { 
@@ -129,12 +129,16 @@ operationButtons.forEach(button => {
     })
 })
 
-equalsButton.addEventListener('click', () => {
+equalsButton.addEventListener('click', (function() {
     calculator.compute();
     calculator.updateDisplay();
     // This is a hack I used because the numbers weren't clearing after equals.
-    wasEqual = true;
-})
+    // wasEqual = true;
+    console.log(this)
+    this.currentOperand = '';
+    this.previousOperand = '';
+    this.operation = undefined;
+}).bind(calculator))
 
 allClearButton.addEventListener('click', () => {
     calculator.clear();
