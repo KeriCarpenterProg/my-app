@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () =>     {
 
     function createBoard() {
     for(i=0;i < cardArray.length; i++) {
-        var card = document.createElement('img')
+        var card = document.createElement('img');
         card.setAttribute('src',"images/blank.png");
         card.setAttribute('data-id', i);
         card.addEventListener('click', flipCard);
