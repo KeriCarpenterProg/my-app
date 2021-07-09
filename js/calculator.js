@@ -134,7 +134,6 @@ equalsButton.addEventListener('click', (function() {
     calculator.updateDisplay();
     // This is a hack I used because the numbers weren't clearing after equals.
     // wasEqual = true;
-    console.log(this)
     this.currentOperand = '';
     this.previousOperand = '';
     this.operation = undefined;
