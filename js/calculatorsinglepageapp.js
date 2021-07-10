@@ -122,13 +122,13 @@ class Calculator {
     var line = document.createElement('div');
     line.setAttribute('class','previous-operand');
     line.setAttribute('data-previous-operand','');
-    line.innerHTML = 'previous number';
+    // line.innerHTML = 'previous number';
     topRow.appendChild(line);
 
     line = document.createElement('div');
     line.setAttribute('class', 'current-operand');
     line.setAttribute('data-current-operand','');
-    line.innerHTML = 'current number';
+    // line.innerHTML = 'current number';
     topRow.appendChild(line);
 
     // Create the AC Button
