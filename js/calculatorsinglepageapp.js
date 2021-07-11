@@ -101,6 +101,9 @@ class Calculator {
         }
     }
     
+    clickButton(theButton){
+        console.log("It is in Click Button and the Button that was clicked was "+theButton);
+    }
     
 
     createBoard() {
@@ -137,7 +140,7 @@ class Calculator {
     button.setAttribute('class',"span-two");
     button.setAttribute('data-all-clear','');
     button.innerHTML = 'AC';
-    button.addEventListener('click', function() {clickButton('AC');});
+    button.addEventListener('click', this.clickButton('AC'));
     area.append(button);
 
     // Create the DEL Button
@@ -145,7 +148,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-delete','');
     button.innerHTML = 'DEL';
-    button.addEventListener('click', function() {clickButton('DEL');});
+    button.addEventListener('click', this.clickButton('DEL'));
     area.append(button);
 
     // Create the % Button
@@ -236,7 +239,6 @@ class Calculator {
     };
     
     
-
 }
 
 
@@ -246,48 +248,50 @@ class Calculator {
 const calculator = new Calculator();
 
 
-function clickButton (theButton) {
-    console.log(theButton);
-    switch(theButton){
-        case "AC":
-            calculator.clear();
-            calculator.updateDisplay();
-            break;
-        case "DEL":
-            calculator.delete();
-            calculator.updateDisplay();
-            break;
-        case "=":
-            calculator.compute();
-            calculator.updateDisplay();
-            // This is a hack I used because the numbers weren't clearing after equals.
-            // wasEqual = true;
-            calculator.currentOperand = '';
-            calculator.previousOperand = '';
-            calculator.operation = undefined;
-            break;
-        case "%":
-        case "*":
-        case "+":
-        case "-":
-            console.log(theButton);
-            calculator.chooseOperation(theButton);
-            calculator.updateDisplay();
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 0:
-            calculator.appendNumber(theButton);
-            calculator.updateDisplay();
-            break;
-    }
-}
+// function clickButton (theButton) {
+//     console.log(theButton);
+//     switch(theButton){
+//         case "AC":
+//             calculator.clear();
+//             calculator.updateDisplay();
+//             break;
+//         case "DEL":
+//             calculator.delete();
+//             calculator.updateDisplay();
+//             break;
+//         case "=":
+//             calculator.compute();
+//             calculator.updateDisplay();
+//             // This is a hack I used because the numbers weren't clearing after equals.
+//             // wasEqual = true;
+//             calculator.currentOperand = '';
+//             calculator.previousOperand = '';
+//             calculator.operation = undefined;
+//             break;
+//         case "%":
+//         case "*":
+//         case "+":
+//         case "-":
+//             console.log(theButton);
+//             calculator.chooseOperation(theButton);
+//             calculator.updateDisplay();
+//             break;
+//         case ".":
+//         case 1:
+//         case 2:
+//         case 3:
+//         case 4:
+//         case 5:
+//         case 6:
+//         case 7:
+//         case 8:
+//         case 9:
+//         case 0:
+//             calculator.appendNumber(theButton);
+//             calculator.updateDisplay();
+//             break;
+//     }
+// }
 
 
 
