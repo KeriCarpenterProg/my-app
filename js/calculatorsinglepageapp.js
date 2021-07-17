@@ -101,9 +101,7 @@ class Calculator {
         }
     }
     
-    clickButton(theButton){
-        console.log("It is in Click Button and the Button that was clicked was "+theButton);
-    }
+    
     
 
     createBoard() {
@@ -140,7 +138,7 @@ class Calculator {
     button.setAttribute('class',"span-two");
     button.setAttribute('data-all-clear','');
     button.innerHTML = 'AC';
-    button.addEventListener('click', this.clickButton('AC'));
+    button.addEventListener('click', function() { this.clickButton('AC') });
     area.append(button);
 
     // Create the DEL Button
@@ -148,7 +146,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-delete','');
     button.innerHTML = 'DEL';
-    button.addEventListener('click', this.clickButton('DEL'));
+    button.addEventListener('click', function() {this.clickButton('DEL')});
     area.append(button);
 
     // Create the % Button
@@ -238,6 +236,9 @@ class Calculator {
     area.append(button);
     };
     
+    clickButton(theButton){
+        console.log("It is in Click Button and the Button that was clicked was "+theButton);
+    }
     
 }
 
