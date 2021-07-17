@@ -1,11 +1,13 @@
 class Calculator {
-    constructor() {
+    constructor(container) {
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
-        this.grid = document.querySelector('.grid');
+        // this.grid = document.querySelector('.grid');
+        this.grid = container || document.querySelector('.grid');
         this.createBoard();
-        this.currentOperandTextElement = document.querySelector('[data-current-operand]');
+        // this.currentOperandTextElement = document.querySelector('[data-current-operand]');
+        console.log(this.currentOperandTextElement);
         this.previousOperandTextElement = document.querySelector('[data-previous-operand]');
     }
 
@@ -101,10 +103,21 @@ class Calculator {
         }
     }
     
+    clickButton(theButton){
+        console.log("It is in Click Button and the Button that was clicked was "+theButton);
+    }
     
     
 
     createBoard() {
+
+    const printButtons = 
+        [ 
+            ['data-number',1],
+            ['data-number',2], 
+            ['data-number',3], 
+            ['data-operation','*']
+        ];
     // create the <div class="calculator-grid">
     var area = document.createElement('div');
     area.setAttribute('class','calculator-grid');
@@ -127,6 +140,8 @@ class Calculator {
     topRow.appendChild(line);
 
     line = document.createElement('div');
+    this.currentOperandTextElement = line;
+
     line.setAttribute('class', 'current-operand');
     line.setAttribute('data-current-operand','');
     // line.innerHTML = 'current number';
@@ -138,7 +153,8 @@ class Calculator {
     button.setAttribute('class',"span-two");
     button.setAttribute('data-all-clear','');
     button.innerHTML = 'AC';
-    button.addEventListener('click', function() { this.clickButton('AC') });
+    // button.addEventListener('click', function() { this.clickButton('AC')) });
+    button.addEventListener('click',this.clickButton.bind(this, 'AC'));
     area.append(button);
 
     // Create the DEL Button
@@ -146,7 +162,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-delete','');
     button.innerHTML = 'DEL';
-    button.addEventListener('click', function() {this.clickButton('DEL')});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create the % Button
@@ -156,6 +172,7 @@ class Calculator {
     button.innerHTML = '%';
     button.addEventListener('click', function() {clickButton('%');});
     area.append(button);
+    
     
 
     // Create buttons 1-3
@@ -236,9 +253,7 @@ class Calculator {
     area.append(button);
     };
     
-    clickButton(theButton){
-        console.log("It is in Click Button and the Button that was clicked was "+theButton);
-    }
+    
     
 }
 
@@ -247,7 +262,7 @@ class Calculator {
 //  "let calc1 = new Calculator(); let calc2 = new Calculator();" 
 // and then render each one to screen.
 const calculator = new Calculator();
-
+const calculator2 = new Calculator();
 
 // function clickButton (theButton) {
 //     console.log(theButton);
