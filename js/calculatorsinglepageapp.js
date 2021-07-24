@@ -7,7 +7,7 @@ class Calculator {
         this.grid = container || document.querySelector('.grid');
         this.createBoard();
         // this.currentOperandTextElement = document.querySelector('[data-current-operand]');
-        console.log(this.currentOperandTextElement);
+        // console.log(this.currentOperandTextElement);
         this.previousOperandTextElement = document.querySelector('[data-previous-operand]');
     }
 
@@ -104,7 +104,46 @@ class Calculator {
     }
     
     clickButton(theButton){
-        console.log("It is in Click Button and the Button that was clicked was "+theButton);
+        switch(theButton){
+                    case "AC":
+                        this.clear();
+                        this.updateDisplay();
+                        break;
+                    case "DEL":
+                        this.delete();
+                        this.updateDisplay();
+                        break;
+                    case "=":
+                        this.compute();
+                        this.updateDisplay();
+                        // This is a hack I used because the numbers weren't clearing after equals.
+                        // wasEqual = true;
+                        this.currentOperand = '';
+                        this.previousOperand = '';
+                        this.operation = undefined;
+                        break;
+                    case "%":
+                    case "*":
+                    case "+":
+                    case "-":
+                        this.chooseOperation(theButton);
+                        this.updateDisplay();
+                        break;
+                    case ".":
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                    case "0":
+                        this.appendNumber(theButton);
+                        this.updateDisplay();
+                        break;
+                }
     }
     
     
@@ -113,10 +152,18 @@ class Calculator {
 
     const printButtons = 
         [ 
-            ['data-number',1],
-            ['data-number',2], 
-            ['data-number',3], 
-            ['data-operation','*']
+            ['button','data-number',1],
+            ['button','data-number',2], 
+            ['button','data-number',3], 
+            ['button','data-operation','*'],
+            ['button','data-number',4],
+            ['button','data-number',5], 
+            ['button','data-number',6], 
+            ['button','data-operation','+'],
+            ['button','data-number',7],
+            ['button','data-number',8], 
+            ['button','data-number',9], 
+            ['button','data-operation','-']
         ];
     // create the <div class="calculator-grid">
     var area = document.createElement('div');
@@ -136,7 +183,7 @@ class Calculator {
     var line = document.createElement('div');
     line.setAttribute('class','previous-operand');
     line.setAttribute('data-previous-operand','');
-    // line.innerHTML = 'previous number';
+    line.innerHTML = 'previous number';
     topRow.appendChild(line);
 
     line = document.createElement('div');
@@ -144,7 +191,7 @@ class Calculator {
 
     line.setAttribute('class', 'current-operand');
     line.setAttribute('data-current-operand','');
-    // line.innerHTML = 'current number';
+    line.innerHTML = 'current number';
     topRow.appendChild(line);
 
     // Create the AC Button
@@ -154,7 +201,7 @@ class Calculator {
     button.setAttribute('data-all-clear','');
     button.innerHTML = 'AC';
     // button.addEventListener('click', function() { this.clickButton('AC')) });
-    button.addEventListener('click',this.clickButton.bind(this, 'AC'));
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create the DEL Button
@@ -170,7 +217,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-operation','');
     button.innerHTML = '%';
-    button.addEventListener('click', function() {clickButton('%');});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
     
     
@@ -181,7 +228,7 @@ class Calculator {
         button = document.createElement('button');
         button.setAttribute('data-number', '');
         button.innerHTML = i;
-        button.addEventListener('click', function() {clickButton(i);});
+        button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
         area.append(button);
     }
     // Create the * Button
@@ -189,7 +236,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-operation','');
     button.innerHTML = '*';
-    button.addEventListener('click', function() {clickButton('*');});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create buttons 4-6
@@ -198,7 +245,7 @@ class Calculator {
         button = document.createElement('button');
         button.setAttribute('data-number', '');
         button.innerHTML = i;
-        button.addEventListener('click', function() {clickButton(i);});
+        button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
         area.append(button);
     }
 
@@ -207,7 +254,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-operation','');
     button.innerHTML = '+';
-    button.addEventListener('click', function() {clickButton('+');});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create buttons 7-9
@@ -216,7 +263,7 @@ class Calculator {
         button = document.createElement('button');
         button.setAttribute('data-number', '');
         button.innerHTML = i;
-        button.addEventListener('click', function() {clickButton(i);});
+        button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
         area.append(button);
     }
 
@@ -225,7 +272,7 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-operation','');
     button.innerHTML = '-';
-    button.addEventListener('click', function() {clickButton('-');});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create the . Button
@@ -233,14 +280,14 @@ class Calculator {
     button = document.createElement('button');
     button.setAttribute('data-operation','');
     button.innerHTML = '.';
-    button.addEventListener('click', function() {clickButton('.');});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     //<button data-number>0</button>
     button = document.createElement('button');
     button.setAttribute('data-number', '');
     button.innerHTML = 0;
-    button.addEventListener('click', function() {clickButton(0);});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create the = Button
@@ -249,7 +296,11 @@ class Calculator {
     button.setAttribute('class',"span-two");
     button.setAttribute('data-equals','');
     button.innerHTML = '=';
-    button.addEventListener('click', function() {clickButton('=');});
+    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
+    area.append(button);
+
+    // Create a HR so they are at least above and below
+    button = document.createElement('hr');
     area.append(button);
     };
     
@@ -262,6 +313,7 @@ class Calculator {
 //  "let calc1 = new Calculator(); let calc2 = new Calculator();" 
 // and then render each one to screen.
 const calculator = new Calculator();
+
 const calculator2 = new Calculator();
 
 // function clickButton (theButton) {
