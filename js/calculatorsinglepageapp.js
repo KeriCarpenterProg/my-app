@@ -146,25 +146,15 @@ class Calculator {
                 }
     }
     
+    mapFunction() {
+        console.log("It got into mapFunction");
+    }
     
 
     createBoard() {
 
-    const printButtons = 
-        [ 
-            ['button','data-number',1],
-            ['button','data-number',2], 
-            ['button','data-number',3], 
-            ['button','data-operation','*'],
-            ['button','data-number',4],
-            ['button','data-number',5], 
-            ['button','data-number',6], 
-            ['button','data-operation','+'],
-            ['button','data-number',7],
-            ['button','data-number',8], 
-            ['button','data-number',9], 
-            ['button','data-operation','-']
-        ];
+    
+
     // create the <div class="calculator-grid">
     var area = document.createElement('div');
     area.setAttribute('class','calculator-grid');
@@ -220,17 +210,48 @@ class Calculator {
     button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
     
-    
-
-    // Create buttons 1-3
-    for(let i=1;i <= 3; i++) {
-        //<button data-number>1</button>
-        button = document.createElement('button');
-        button.setAttribute('data-number', '');
-        button.innerHTML = i;
+    const printButtons = 
+        [ 
+            ['button','data-number',1],
+            ['button','data-number',2], 
+            ['button','data-number',3], 
+            // ['button','data-operation','*'],
+            // ['button','data-number',4],
+            // ['button','data-number',5], 
+            // ['button','data-number',6], 
+            // ['button','data-operation','+'],
+            // ['button','data-number',7],
+            // ['button','data-number',8], 
+            // ['button','data-number',9], 
+            // ['button','data-operation','-']
+        ];
+        
+    // Create buttons 1-3 using .map
+    printButtons.map(function(index){
+        console.log(index[2]);
+        button = document.createElement(index[0]);
+        button.setAttribute(index[1], '');
+        button.innerHTML = index[2];
+        // why isn't this eventListener working?  It was working before
+        // I've tried:
+        // separating this out into its own function.
+        // changing it to forEach function
+        // taking this off or putting it on again
         button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
         area.append(button);
-    }
+    });
+
+    // Create buttons 1-3
+    // for(let i=1;i <= 3; i++) {
+    //     //<button data-number>1</button>
+    //     button = document.createElement('button');
+    //     button.setAttribute('data-number', '');
+    //     button.innerHTML = i;
+    //     button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
+    //     area.append(button);
+    // }
+
+
     // Create the * Button
     // <button data-operation>*</button>
     button = document.createElement('button');
@@ -314,7 +335,7 @@ class Calculator {
 // and then render each one to screen.
 const calculator = new Calculator();
 
-const calculator2 = new Calculator();
+// const calculator2 = new Calculator();
 
 // function clickButton (theButton) {
 //     console.log(theButton);
