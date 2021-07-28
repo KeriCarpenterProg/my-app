@@ -3,8 +3,7 @@ class Calculator {
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
-        // this.grid = document.querySelector('.grid');
-        this.grid = container || document.querySelector('.grid');
+        this.grid = container || document.querySelector('.wrapper');
         this.createBoard();
         // this.currentOperandTextElement = document.querySelector('[data-current-operand]');
         // console.log(this.currentOperandTextElement);
@@ -146,10 +145,6 @@ class Calculator {
                 }
     }
     
-    mapFunction() {
-        console.log("It got into mapFunction");
-    }
-    
 
     createBoard() {
 
@@ -159,6 +154,7 @@ class Calculator {
     var area = document.createElement('div');
     area.setAttribute('class','calculator-grid');
     this.grid.append(area);
+
 
     // Create this top area of the calculator
     // <div class="output">
@@ -173,7 +169,7 @@ class Calculator {
     var line = document.createElement('div');
     line.setAttribute('class','previous-operand');
     line.setAttribute('data-previous-operand','');
-    line.innerHTML = 'previous number';
+    // line.innerHTML = 'previous number';
     topRow.appendChild(line);
 
     line = document.createElement('div');
@@ -181,7 +177,7 @@ class Calculator {
 
     line.setAttribute('class', 'current-operand');
     line.setAttribute('data-current-operand','');
-    line.innerHTML = 'current number';
+    // line.innerHTML = 'current number';
     topRow.appendChild(line);
 
     // Create the AC Button
@@ -190,126 +186,55 @@ class Calculator {
     button.setAttribute('class',"span-two");
     button.setAttribute('data-all-clear','');
     button.innerHTML = 'AC';
-    // button.addEventListener('click', function() { this.clickButton('AC')) });
     button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
     area.append(button);
 
     // Create the DEL Button
     // <button data-delete>DEL</button>
-    button = document.createElement('button');
-    button.setAttribute('data-delete','');
-    button.innerHTML = 'DEL';
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
+    // button = document.createElement('button');
+    // button.setAttribute('data-delete','');
+    // button.innerHTML = 'DEL';
+    // button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
+    // area.append(button);
 
     // Create the % Button
     // <button data-operation>%</button>
-    button = document.createElement('button');
-    button.setAttribute('data-operation','');
-    button.innerHTML = '%';
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
+    // button = document.createElement('button');
+    // button.setAttribute('data-operation','');
+    // button.innerHTML = '%';
+    // button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
+    // area.append(button);
     
     const printButtons = 
         [ 
+            ['button','data-delete','DEL'],
+            ['button','data-operation','%'],
             ['button','data-number',1],
             ['button','data-number',2], 
             ['button','data-number',3], 
-            // ['button','data-operation','*'],
-            // ['button','data-number',4],
-            // ['button','data-number',5], 
-            // ['button','data-number',6], 
-            // ['button','data-operation','+'],
-            // ['button','data-number',7],
-            // ['button','data-number',8], 
-            // ['button','data-number',9], 
-            // ['button','data-operation','-']
+            ['button','data-operation','*'],
+            ['button','data-number',4],
+            ['button','data-number',5], 
+            ['button','data-number',6], 
+            ['button','data-operation','+'],
+            ['button','data-number',7],
+            ['button','data-number',8], 
+            ['button','data-number',9], 
+            ['button','data-operation','-'],
+            ['button','data-operation','.'], 
+            ['button','data-number',0], 
         ];
         
     // Create buttons 1-3 using .map
-    printButtons.map(function(index){
-        console.log(index[2]);
+    printButtons.map((function(index){
         button = document.createElement(index[0]);
         button.setAttribute(index[1], '');
         button.innerHTML = index[2];
-        // why isn't this eventListener working?  It was working before
-        // I've tried:
-        // separating this out into its own function.
-        // changing it to forEach function
-        // taking this off or putting it on again
         button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
         area.append(button);
-    });
+    }).bind(this));
 
-    // Create buttons 1-3
-    // for(let i=1;i <= 3; i++) {
-    //     //<button data-number>1</button>
-    //     button = document.createElement('button');
-    //     button.setAttribute('data-number', '');
-    //     button.innerHTML = i;
-    //     button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    //     area.append(button);
-    // }
-
-
-    // Create the * Button
-    // <button data-operation>*</button>
-    button = document.createElement('button');
-    button.setAttribute('data-operation','');
-    button.innerHTML = '*';
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
-
-    // Create buttons 4-6
-    for(let i=4;i <= 6; i++) {
-        //<button data-number>1</button>
-        button = document.createElement('button');
-        button.setAttribute('data-number', '');
-        button.innerHTML = i;
-        button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-        area.append(button);
-    }
-
-    // Create the + Button
-    // <button data-operation>+</button>
-    button = document.createElement('button');
-    button.setAttribute('data-operation','');
-    button.innerHTML = '+';
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
-
-    // Create buttons 7-9
-    for(let i=7;i <= 9; i++) {
-        //<button data-number>1</button>
-        button = document.createElement('button');
-        button.setAttribute('data-number', '');
-        button.innerHTML = i;
-        button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-        area.append(button);
-    }
-
-    // Create the - Button
-    // <button data-operation>-</button>
-    button = document.createElement('button');
-    button.setAttribute('data-operation','');
-    button.innerHTML = '-';
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
-
-    // Create the . Button
-    // <button data-operation>.</button>
-    button = document.createElement('button');
-    button.setAttribute('data-operation','');
-    button.innerHTML = '.';
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
-
-    //<button data-number>0</button>
-    button = document.createElement('button');
-    button.setAttribute('data-number', '');
-    button.innerHTML = 0;
-    button.addEventListener('click',this.clickButton.bind(this, button.innerHTML));
-    area.append(button);
+    
 
     // Create the = Button
     // <button data-equals class="span-two">=</button>
@@ -333,55 +258,19 @@ class Calculator {
 //  if you have done the constructor correctly, it should be as easy as
 //  "let calc1 = new Calculator(); let calc2 = new Calculator();" 
 // and then render each one to screen.
+let grid = document.querySelector('.grid');
+var introText = document.createElement('h1');
+    introText.innerHTML = "Calculators constructed using Classes";
+grid.append(introText);
+
+// create the <div class="calculator-grid">
+var area = document.createElement('div');
+area.setAttribute('class','wrapper');
+grid.append(area);
+
 const calculator = new Calculator();
 
-// const calculator2 = new Calculator();
-
-// function clickButton (theButton) {
-//     console.log(theButton);
-//     switch(theButton){
-//         case "AC":
-//             calculator.clear();
-//             calculator.updateDisplay();
-//             break;
-//         case "DEL":
-//             calculator.delete();
-//             calculator.updateDisplay();
-//             break;
-//         case "=":
-//             calculator.compute();
-//             calculator.updateDisplay();
-//             // This is a hack I used because the numbers weren't clearing after equals.
-//             // wasEqual = true;
-//             calculator.currentOperand = '';
-//             calculator.previousOperand = '';
-//             calculator.operation = undefined;
-//             break;
-//         case "%":
-//         case "*":
-//         case "+":
-//         case "-":
-//             console.log(theButton);
-//             calculator.chooseOperation(theButton);
-//             calculator.updateDisplay();
-//             break;
-//         case ".":
-//         case 1:
-//         case 2:
-//         case 3:
-//         case 4:
-//         case 5:
-//         case 6:
-//         case 7:
-//         case 8:
-//         case 9:
-//         case 0:
-//             calculator.appendNumber(theButton);
-//             calculator.updateDisplay();
-//             break;
-//     }
-// }
-
+const calculator2 = new Calculator();
 
 
 
