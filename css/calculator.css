@@ -3,7 +3,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
 }
-
+h1 {
+    text-align: center;
+}
 body {
     padding: 1rem;
     margin: 1rem;
@@ -13,6 +15,10 @@ body {
 
     
 
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 .calculator-grid {
