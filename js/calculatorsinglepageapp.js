@@ -7,7 +7,7 @@ class Calculator {
         this.createBoard();
         // this.currentOperandTextElement = document.querySelector('[data-current-operand]');
         // console.log(this.currentOperandTextElement);
-        this.previousOperandTextElement = document.querySelector('[data-previous-operand]');
+        // this.previousOperandTextElement = document.querySelector('[data-previous-operand]');
     }
 
     clear() {   
@@ -167,9 +167,10 @@ class Calculator {
     area.append(topRow);
 
     var line = document.createElement('div');
+    this.previousOperandTextElement = line;
     line.setAttribute('class','previous-operand');
     line.setAttribute('data-previous-operand','');
-    // line.innerHTML = 'previous number';
+    line.innerHTML = 'previous number';
     topRow.appendChild(line);
 
     line = document.createElement('div');
