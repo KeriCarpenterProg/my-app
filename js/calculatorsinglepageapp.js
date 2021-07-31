@@ -170,7 +170,7 @@ class Calculator {
     this.previousOperandTextElement = line;
     line.setAttribute('class','previous-operand');
     line.setAttribute('data-previous-operand','');
-    line.innerHTML = 'previous number';
+    // line.innerHTML = 'previous number';
     topRow.appendChild(line);
 
     line = document.createElement('div');
