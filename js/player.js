@@ -17,9 +17,9 @@ let PlayerMoves = {
     calcAttack: function(){
         let getPlayerSpeed = player.speed;
         // let getEnemySpeed = enemy.speed;
-        let calcOutputDamage = 100;
-        let numberOfHits = Math.floor(Math.random() * Math.floor(player.agility/10) / 2)+1;
-        let attackValues = [calcOutputDamage,numberOfHits];
-        
+    }
+    let playerAttack = function() {
+        let calcBaseDamage;
+        console.log("Why doesn't this work?");
     }
 }
