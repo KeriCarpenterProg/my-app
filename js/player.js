@@ -18,6 +18,8 @@ let PlayerMoves = {
         let getPlayerSpeed = player.speed;
         // let getEnemySpeed = enemy.speed;
     }
+
+    // THIS DOES NOT WORK AT ALL.  WHATEVER I DO I can't even declare this sucker and I've combed over it.
     let playerAttack = function() {
         let calcBaseDamage;
         console.log("Why doesn't this work?");
