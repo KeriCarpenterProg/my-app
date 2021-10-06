@@ -1,4 +1,4 @@
-let player;
+
 
 function Player(classType, picture, health, mana, strength, agility, speed) {
     this.classType = classType;
@@ -16,11 +16,13 @@ let random = Math.floor(Math.random()*10);
 let PlayerMoves = {
     calcAttack: function(){
         let getPlayerSpeed = player.speed;
-        // let getEnemySpeed = enemy.speed;
-    }
+        let getEnemySpeed = enemy.speed;
+        console.log("The enemy speed is "+enemy.speed);
+        this.playerAttack();
+    },
 
     // THIS DOES NOT WORK AT ALL.  WHATEVER I DO I can't even declare this sucker and I've combed over it.
-    let playerAttack = function() {
+    playerAttack: function() {
         let calcBaseDamage;
         console.log("Why doesn't this work?");
     }

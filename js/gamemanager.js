@@ -1,3 +1,6 @@
+let enemy;
+let player;
+
 let GameManager = {
     setGameStart: function(classType) {
         this.resetPlayer(classType);
@@ -43,7 +46,7 @@ let GameManager = {
         let getActions = document.querySelector('.actions');
         let getEnemy = document.querySelector('.enemy');
         // Create enemy
-        let enemy;
+  
         let enemy00 = new Enemy("Goblin", 1, 100, 0, 50, 100, 800);
         let enemy01 = new Enemy("Troll", 2, 100, 0, 50, 100, 900);
         let chooseRandomEnemy = Math.floor(Math.random() * 2);
