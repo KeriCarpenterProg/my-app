@@ -25,7 +25,7 @@ let GameManager = {
         let picturePath = "./images/pokemon-sprite-"+player.picture+".png";
         getInterface.innerHTML = '<img src='+picturePath+
         ' class="img-avatar"><div><h3>'+player.classType+'</h3>'+
-        '<p>Health : '+player.health+'</p>'+
+        '<p class="player-health">Health : '+player.health+'</p>'+
         '<p>Mana : '+player.mana+'</p>'+
         '<p>Strength : '+player.strength+'</p>'+
         '<p>Agility : '+player.agility+'</p>'+
@@ -65,7 +65,7 @@ let GameManager = {
         getEnemy.innerHTML = '<img src='+picturePath+
         ' class="img-avatar"><div><h3>'+enemy.enemyType+'</h3>'+
         '<p>Random Enemy Number :'+chooseRandomEnemy+
-        '<p>Health : '+enemy.health+'</p>'+
+        '<p class="enemy-health">Health : '+enemy.health+'</p>'+
         '<p>Mana : '+enemy.mana+'</p>'+
         '<p>Strength : '+enemy.strength+'</p>'+
         '<p>Agility : '+enemy.agility+'</p>'+
