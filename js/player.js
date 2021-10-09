@@ -38,6 +38,7 @@ let PlayerMoves = {
             getPlayerHealth.innerHTML = "Health : "+player.health;
             getEnemyHealth.innerHTML = "Health : "+enemy.health;
         }
+    
     },
 
     // Player attacks!
