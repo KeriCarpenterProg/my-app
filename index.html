@@ -33,31 +33,38 @@
         color: #ffa600;
         font-style: normal;
       }
-      #toc_container {
+      #container {
         align-items: center;
-        background: #e6eefa none repeat scroll 0 0;
-        border: 1px solid #aaa;
+        flex-direction: column;
+        align-items: center;
+
         display: flex;  
-        flex-flow: row wrap;
         align-content: center;
         font-weight: bold;
         font-size: 100%;
         margin-bottom: 1em;
         padding: 20px;
-        width: 618px;
+      }
+
+      #item {
+        margin: 20px;
+        border: 5px solid #aaa;
+        width: 70%;
+        padding: 10px;
+        background: #FDFCEE  none repeat scroll 0 0;
+
       }
 
       .toc_title {
-        font-weight: 700;
-        text-align: center;
+        font-weight: 900;
       }
 
 
-      /* #toc_container li,
+      #toc_container li,
       #toc_container ul,
       #toc_container ul li {
-        list-style: outside none none !important;
-      } */
+        list-style: none none !important;
+      }
     </style>
   </head>
   <body>
@@ -67,47 +74,13 @@
        following lately to practice.  Not finished projects.
       I try to keep current list of next steps.  Once I knock them off, I demote them to the archives.
     </p>
-    <div id="center">
-    <div id="toc_container">
-      <h2 class="toc_title">Next Steps</h2>
-      <p>(c)</p>
+    <div id="container">
+    <div id="item">
+      <h1>Next Steps</h1>
       <p>This is a list of no more than 3 next steps or ideas of next steps.</p>
       <ol>
-        <li>Flexbox tutorials.  This index.html page looks crappy and I want it to look better so I'm doing tutorials.</li>
-        <ul>
-          <li>
-            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flex Box examples</a> I really like this one.
-          </li>
-        <li>
-          <a href="https://love2dev.com/blog/absolute-centering-css/" target="_blank">Another example.  </a> Looks good.  Haven't engaged with it though.  
-        </li>
-        <li>
-          <a href="https://tobiasahlin.com/blog/common-flexbox-patterns/" target="_blank">Another page.  </a> Looks good.  Also, Haven't engaged with it though.  
-        </li>
-        <li>
-          <a href="https://coryrylan.com/blog/how-to-center-in-css-with-flexbox" target="_blank">Another page.  </a> Looks good.  Also, Haven't engaged with it though.  
-        </li>
-        </ul>  
-        <li>Object tutorial.  3 Videos.  At 10 min of 30 mins on #3. Dani Krossing. </li>
-        <ul>
-          <li>
-            <a href="https://youtu.be/o9RozigP19c" target="_blank">Video</a> 10:00 of 30:00 total
-          </li>
-        <li>
-          <a href="page24.html" target="_blank">The Page</a> Virtually done.  Another half hour of work.
           
-        </li>
-        </ul>  
-          <li>PQD Dashboard 
-            
-            <ul>
-              <li>
-                Replicate all the screen elements myself.  Made good progress on this already.
-              </li>
-              <li>Work with Elasticsearch to add, delete, change data in the backend.</li>
-            </ul>
-            </li>
-            <li>Performance tutorial.  Watched it through entirely and it looks good.</li>
+            <li>Performance tutorials.  Watched it through entirely and it looks good.</li>
         <ul>
           <li>
             <a href="https://youtu.be/5fLW5Q5ODiE" target="_blank">Video</a> 1:00 of 13:00 total
@@ -117,7 +90,7 @@
           
         </li>
         </ul>  
-              <li>Docker 
+              <li>Docker </li>
           <ul>
             <li>
               what is it?  How can I use it?  Watch some videos of explanation.  I don't need hands on the keybaord at this point.
@@ -132,7 +105,15 @@
               Kevin says this is the newer tool like Jenkins.  Get to know it.
             </li>
           </ul> 
-          </li>      
+          </li>   
+          <li>PQD Dashboard 
+            <ul>
+              <li>
+                Replicate all the screen elements myself.  Made good progress on this already.
+              </li>
+              <li>Work with Elasticsearch to add, delete, change data in the backend.</li>
+            </ul>
+            </li>   
           <li>X tutorial from Y.  XX minutes.  X years old. </li>
           <ul>
             <li>
@@ -146,9 +127,9 @@
           
       </ol>
     </div>
-  </div>
-    <div id="toc_container">
-      <p class="toc_title">Ideas of what to work on next</p>
+
+    <div id="item">
+      <h1>Ideas of what to work on next</h1>
 <ul class="toc_list">
 
   <li>Look for a Typescript tutorial.</li>
@@ -197,11 +178,21 @@
   <li>Good printed <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox </a> explanation</li>
 </ul>
     </div>
-    <div id="toc_container">
-      <p class="toc_title">Recent Projects</p>
+    <div id="item">
+      <h1>Recent Projects</h1>
       <ul class="toc_list">
         <li>November 2021</li>
-        <li>Database tutorial.  45 minutes.  1 year old. </li>
+        <li>Object tutorial. A small D&D type game from Dani Krossing. </li>
+        <ul>
+          <li>
+            <a href="https://youtu.be/o9RozigP19c" target="_blank">Video</a> Done.
+          </li>
+        <li>
+          <a href="page24.html" target="_blank">The Page</a> Done.
+          
+        </li>
+        </ul>  
+        <li>Create Read Update Delete a mysql database. Done. </li>
         <ul>
           <li>
             <a href="https://youtu.be/_S2GKnFpdtE" target="_blank">Video (3 of 3)</a> 24:00 total
@@ -212,17 +203,6 @@
         </li>
         <li>This is complete.</li>
         </ul>  
-        <li>Bootstrap tutorial.  
-          Already did this but I deleted it.  Do it again.  1 years old. </li>
-       <ul>
-         <li>
-           <a href="https://youtu.be/TJF4ldO91n4" target="_blank">Video</a> 2 hours total.
-         </li>
-       <li>
-         <a href="page24.html" target="_blank">The Code</a> I haven't started yet.
-         
-       </li>
-       </ul> 
        <li>June 2021</li>
        
             <li>Whack A Mole Game. Game 2 of 7. By this girl Ana.</li>
@@ -334,9 +314,7 @@
               >
             </li>
           </ul>
-        </li>
-        <li>
-          May 2021
+          <li>May 2021</li>
           <ul>
             <li>
               <a href="my-clock.html"
@@ -465,7 +443,7 @@
         </li>
       </ul>
     </div>
-
+  </div>
     <img class="header" src="images/keri3.jpg" />
   
 
