@@ -8,32 +8,38 @@
     <style>
         .container {
             display: flex;
-            flex-flow: wrap;
-            justify-content: space-around;
-            list-style:none;
+            flex-direction: column;
+            background: yellow;
+            align-items: center;
+            
         }
         .item {
             background: tomato;
-            width:200px;
-            height:150px;
+            border: 3px solid #333;
+            width: 50%;
+            margin: 10px;
             padding: 5px;
-            margin-top: 10px;
-            line-height: 150px;
-            text-align: center;
+            height: 150px;
             color:white;
             font-size: 3em;
             font-weight: bold;
         }
+        .item-1{
+        }
+        .item-2 {
+        }
+        .item-3 {
+        }
     </style>
 </head>
 <body>
-    <ul class="container">
-        <li class="item">One</li>
-        <li class="item">Two</li>
-        <li class="item">Three</li>
-        <li class="item">Four</li>
+    <div class="container">
+        <div class="item item-1">One</div>
+        <div class="item item-2">Two</div>
+        <div class="item item-3">Three</div>
+        <!-- <li class="item">Four</li>
         <li class="item">Five</li>
-        <li class="item">Six</li>
-    </ul>
+        <li class="item">Six</li> -->
+        </div>
 </body>
 </html>
