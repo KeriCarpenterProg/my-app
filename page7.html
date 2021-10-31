@@ -4,10 +4,78 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bootstrap 5 Crash Course</title>
+    <title>Coding Test Fall 2021</title>
     <link rel="stylesheet" src="css.bootstrap.css" />
   </head>
-  <body>
-    <h1>I'm doing <a href="https://youtu.be/c9B4TPnak1A">this</a> tutorial.</h1>
+  <body onLoad="runProgram()">
+    <h1>Coding Test Practice Fall 2021</h1>
+    <p>In this coding test, I take an array, step through it and pass it into other functions.</p>
+    <p>It is mainly testing my understanding of scope and what gets seen where.</p>
+    <h3>Where I left off on 10/30/21 at 7am after about an hour of work:</h3>
+    <p>I have all the functions working and printing stuff to the screen effectively.  So that is huge and realistically worth my hour of work.</p>
+    <p>But I don't think I'm doing the setTimeout function propertly</p>
+    <p>And I know there is some stuff with bind and this that I don't understand.  Discuss with Kevin on 11/3 or 4 at 3pm.</p>
+
+    <img src="images/2.jpg" width="50px" alt="">
+    <hr>
+    <h1>Javascript Work</h1>
+    <p>After this, all elements printed to the screen are printed by my javascript function.</p>
+
+    <!--   This is Ryan's work  --- /**
+ * Worker class
+ * @param {number} data
+ *        Input data that will be processed
+ */
+function Worker(data) {
+  this._data = data;
+}
+
+/**
+ * process method
+ * @param {function} callback
+ *         Callback function that has the result as the first parameter. 
+ *         function callback(result){}
+ *         result is a number.
+ */
+Worker.prototype.process = function(callback) {
+  setTimeout(function() {
+    callback(this._data * 2);
+  }.bind(this), 100);
+};
+
+var input = [0, 10, 20, 30, 40, 50];
+
+for(let i = 0; i<input.length; i++){
+  
+  const worker = new Worker(input[i]);
+  worker.process(console.log);
+  
+}
+// Iterate over the array and create a new Worker for each element.
+// Call the process function, and in the callback log the element
+// used to create the worker and the result. -->
+    <script>
+      function runProgram() {
+
+        function Keri(oneNumber) {
+          const line = document.createElement("p");
+        line.innerHTML = "this is the "+oneNumber+" message";
+        document.body.appendChild(line);
+       
+
+          Keri.prototype.passData = function(callback) {
+            setTimeout(() => {
+              document.body.appendChild(line), 10000});
+          }
+        }
+        var input = [0, 10, 20, 30, 40, 50, 60, 70];
+
+        for(let i=0; i<input.length; i++) {
+          const doesThisWork = new Keri(input[i]);
+
+          doesThisWork.passData();
+        }
+      }
+    </script>
   </body>
 </html>

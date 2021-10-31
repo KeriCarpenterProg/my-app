@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Test Fall 2021</title>
+    <link rel="stylesheet" src="css.bootstrap.css" />
+  </head>
+  <body>
+    <h1>What are callbacks?</h1>
+    <p>I <a href="https://youtu.be/xHneyv38Jro">watched this tutorial </a> to get the concepts.</p>
+    <p>Essentially, passing one function into another function so you can enforce that it gets executed after the first function</p>
+    
+    <hr>
+    <h3>Call back example</h3>
+    <p>I have an array of users.  I'm adding a user.  and then I'm getting a list of users</p>
+    <p>First, I am using setTimeout to delay the first function's execution.  It doesn't finish
+      before the list of users is updated.
+    </p>
+
+  
+    <script>
+      
+      var users = ["Sam", "Ellie", "Bernie"];
+
+      function addUser(username) {
+        setTimeout(function() {
+          users.push(username);
+        }, 200);
+      }
+
+      function getUsers() {
+        setTimeout(function() {
+        console.log(users);
+        line = document.createElement("p");
+        line.innerHTML = "What are the current users in the array? "+users;
+        document.body.appendChild(line);
+
+        }, 100);
+      }
+
+      let line = document.createElement("p");
+      line.innerHTML = "This is the last element in the array before pushing another element on the array.  It should be Bernie.  Is it?  "+users;
+      document.body.appendChild(line);
+      addUser("Jake");
+      getUsers();
+
+      // The way using the Callback.
+      let users2 = ["Sam", "Ellie", "Bernie"];
+
+      function addUser2(username2,callback) {
+        setTimeout(function() {
+          users2.push(username2);
+          callback();
+        }, 200);
+      }
+
+      function getUsers2() {
+        setTimeout(function() {
+        console.log(users);
+        const line = document.createElement("p");
+        line.innerHTML = "What are the current users in the array AFTER pushing a new user on?  "+users2;
+        document.body.appendChild(line);
+        }, 100);
+      }
+
+      line = document.createElement("p");
+      line.innerHTML = "This is using callbacks.";
+      document.body.appendChild(line);
+      line = document.createElement("p");
+      line.innerHTML = "What are the current users in the array before adding a user?  "+users2;
+      document.body.appendChild(line);
+      addUser2("Keri",getUsers2);
+
+    </script>
+  </body>
+</html>

@@ -16,16 +16,17 @@
     <p id="demo"></p>
     <p id="demo1"></p>
     <p id="demo11"></p>
+    <p id="demo111"></p>
     <p id="demo2"></p>
     <p id="demo3">This is example text.</p>
-    <p>Adding one more linee!</p>
     <script>
-      document.getElementById("demo").innerText =
-        "The String without converting to lower case and stripping all non alpha number characters out was\n";
+
       var wordToReverse = window.prompt(
         "Please provide me a word that might be a palindrome "
       );
       // var wordToReverse = "RAC#%^EC#$^AR";
+      document.getElementById("demo").innerText =
+        "The String without converting to lower case and stripping all non alpha number characters out was\n";
       document.getElementById("demo1").innerHTML = wordToReverse;
 
       let trueOrFalse = palindrome(wordToReverse);
@@ -33,19 +34,13 @@
       function palindrome(str) {
         var regularExpression = /[\W]/g;
 
-        console.log(
-          "The String without converting to lower case and stripping all non alpha number characters out was\n" +
-            str
-        );
+    
         let lowerCase = str.toLowerCase().replace(regularExpression, "");
         let reverseString = lowerCase.split("").reverse().join("");
-        console.log(
-          "String reversed and all extra characters stripped out " +
-            reverseString
-        );
         document.getElementById("demo11").innerHTML =
-          "The String reversed and all extra characters stripped out was\n\n " +
+          "The String reversed and all extra characters stripped out was \n\n " +
           reverseString;
+        document.getElementById("demo111").innerHTML = reverseString;
         return lowerCase === reverseString;
       }
     </script>

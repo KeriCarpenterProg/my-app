@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: black;
+            color: white;
+            text-align: center;
+            line-height: 1;
+            background-image: linear-gradient(45deg, rgb(75, 71, 71) , black);
+        }
+        p {
+            line-height: 0.5;
+        }
+        button{
+            border-radius: 20px;
+            height: 50px;
+            padding: 0 30px 0 30px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+        }
+        .item {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            border: 1px solid white;
+            flex-direction: row;
+        }
+        .left-item {
+            display: flex;
+            /* border: 1px solid yellow; */
+            margin: 10px;
+            margin-left: 40px;
+            width: 50%;
+            flex-flow: 1;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .right-item {
+            /* border: 3px solid green; */
+            margin: 10px;
+            width: 50%;
+            text-align:left;
+            font-size:xx-small;
+            flex-flow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>UI Catalog</h1>
+    <p>This app displays components visually</p>
+    <p>User can change components' properties & see how it looks.</p>
+    <div class="container">
+        <div class="item">
+            <div class="left-item">
+                <button>
+                    RNPS Demo
+                </button>
+            </div>
+            <div class="right-item">
+                <!-- <h1>RNPS Demo</h1> -->
+                <h2>Components in SIE-Private/rnps repo</h2>
+                <h2>
+                    A demonstration of RNPS' native components
+                </h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="left-item">
+                <button>
+                    UI Shared Utilities Demo
+                </button>
+            </div>
+            <div class="right-item">
+                <!-- <h1>UI Shared Utilities Demo</h1> -->
+                <h2>Components in SIE-Private/rnps-ui-shared-utilities repo</h2>
+                <h2>
+                    The aim of UI Shared Utilities is to provide an all-in-one UI kit for creating apps in react-native-playstation
+                </h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="left-item">
+                <button>
+                    UI Swat Demo
+                </button>
+            </div>
+            <div class="right-item">
+                <!-- <h1>UI Swat Demo</h1> -->
+                <h2>Components in SIE-Private/rnps-ppr-ui-swat repo</h2>
+                <h2>
+                    Components for spec Layout and Behavior
+                </h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
