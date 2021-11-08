@@ -2,6 +2,7 @@
 // https://youtu.be/cuEtnrL9-H0
 
 // Just testing that the index.js file is being read properly
+
 console.log('This printed from index.js!');
 
 fetch('https://reqres.in/api/users')

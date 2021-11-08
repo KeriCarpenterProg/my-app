@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, intialize" />
+    <meta name="viewport" />
     <meta name="keywords" content="HTML, CSS" />
     <meta name="description" content="my web page" />
-    <title>A series of test pages</title>
+    <title>DOM manipulation</title>
     <style>
       img {
         width: 200px;
@@ -22,15 +22,61 @@
         font-style: normal;
       }
     </style>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
   </head>
   <body>
-    <a href="index.html">Home</a>
-    <h1>
-      To Do:
-      <a href="https://codesandbox.io/s/example-css-grid-excoi"
-        >an Code Sandbox example</a
-      >
-      of a CSS Grid that I can recreate and play around with
-    </h1>
+    <h1>DOM Manipulation Practice</h1>
+    <p id="writeHere">This was supposed to be a coding test, but turned into a DOM manipulation exercise.</p>
+
+    <UL id="sampleid">
+      <li class="sample">
+        <a href="#">Link 1</a>
+      </li>
+      <li>
+        <a href="#">Link 2</a>
+      </li>
+      <li class="sample">
+        <a href="#">Link 3</a>
+      </li>
+    </UL>
+
+    <div id="writeHere2">This should be replaced.</div>
+    <div id="writeHere3">This could also be replaced!  I have added an id of writeHere3</div>
+    <p>As of 11/7/21, all I've done is DOM manipulation and printing elements to the screen</p>
+    <p>using getElementById, createElement and append</p>
+
+    <script>
+      let p = document.createElement('p');
+      p.textContent = 'This is my paragraph';
+      p.style.color = "red";
+      let a = document.querySelector('li');
+      let b = a.firstElementChild;
+      a.insertBefore(p, b);
+      a = document.querySelector('li');
+      a.parentElement.removeChild(a);
+
+
+
+
+      const y = document.getElementById('writeHere2');
+      y.innerHTML = "<p>Here I am overwritting the existing text and adding a p tag inside the original div</p>";
+      let x = document.createElement('div');
+      x.innerHTML = "<h3>Using a for loop to print out 10 bullet points</h3>";
+      y.append(x);
+      x = document.createElement('ul');
+      y.append(x);
+      for (var i = 0; i < 10; i++) {
+      let child = document.createElement('li');
+      child.innerHTML = "Element No. " + (i+1); 
+      x.append(child);
+      }
+      
+    </script>
   </body>
-</html>
+  </html>

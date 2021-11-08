@@ -1,32 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Keri Carpenter Introduction</title>
-    <link rel="stylesheet" href="styles8.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Test Fall 2021</title>
+    <link rel="stylesheet" src="css.bootstrap.css" />
   </head>
   <body>
-    <div class="first-row"></div>
-    <div class="second-row">
-      <h1>Keri Carpenter</h1>
-      <h3>Investor</h3>
-    </div>
-    <div class="third-row">
-      <h1>Hello, a little about me:</h1>
-    </div>
-    <div class="fourth-row">
-      <p>
-        “Tech”. “Rentals”. “Retail” 
-      </P>
-      <p>I have three main lines of business.</p>
-      <p>I work:</p>
-      <ul>
-          <li>at Playstation as an Engineering Manager</li>
-          <li>I own and manage a portfolio of rental properties</li>
-          <li>and I also own 3 retail businesses</li>
-      </ul>
-        
-      </p>
-      </p>
-    </div>
+    <h1>Coding Test Practice Fall 2021</h1>
+    <p>In this coding test, I take an array, step through it and pass it into other functions</p>
+    <p>And print it out after being passed around through various functions.</p>
+    <hr>
+    <p>All elements printed to the screen are printed by my javascript function.</p>
+
+    <p id="writeHere">This is the P element node that I am appending all the next p elements.</p>
+    <p>  *******  This should print after the elements I am printing in my function.</p>
+
+    <script>
+/**
+ * Worker class
+ * @param {number} data
+ *        Input data that will be processed
+ */
+function Worker(data) {
+  this._data = data;
+}
+
+/**
+ * process method
+ * @param {function} callback
+ *         Callback function that has the result as the first parameter. 
+ *         function callback(result){}
+ *         result is a number.
+ */
+Worker.prototype.process = function(callback) {
+
+  setTimeout(function() {
+
+    callback(this._data * 2);
+  }.bind(this), 100);
+  return this._data*2;
+};
+
+var input = [0, 10, 20, 30, 40, 50];
+
+// I am grabbing the node where I want to append the elements in the array.
+var addNode = document.getElementById("writeHere");
+
+
+for(let i = 0; i<input.length; i++){
+  
+  const line = document.createElement("p");
+  const worker = new Worker(input[i]);
+  const number = worker.process(console.log);
+
+  line.innerHTML = "This is the element in the array "+number;
+  addNode.appendChild(line);
+  
+}
+
+    </script>
   </body>
 </html>
