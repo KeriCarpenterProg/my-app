@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, intialize" />
-    <meta name="keywords" content="HTML, CSS" />
-    <meta name="description" content="my web page" />
-    <title>My fifty first web page</title>
-    <style>
-      img {
-        width: 200px;
-        border-radius: 100px;
-        float: left;
-        margin-right: 10px;
-      }
-      .username {
-        font-weight: bold;
-        font-size: small;
-      }
-      em {
-        color: orange;
-        font-style: normal;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>HTML</h2>
-    <p>HTML Tutorial</p>
-    <h3>Code</h3>
-    <h3>Exercises</h3>
-    <h2>CSS</h2>
-    <p>CSS tutorial</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Tests</title>
+</head>
+<body>
+    <h1>Javascript coding tests</h1>
+    <p>The work is in script tags and console.log</p>
+    <script>
+    let String = "Hello, World";
+    //           "rldHello, Wo"
+    let z = String.split("");
+    let y = ["X","X","X","X","X"];
+    let x= 3;
+    let newIndex = 0;
+   
+    for(i=0;i<z.length;i++){
+        if(i+x>=z.length) { y[i+x-(z.length)]=z[i]}
+        else { 
+            y[i+x]=z[i]}
+    }
+    let a = y.join("");
+    console.log("The Array Y is "+a)
 
-    <p>I love to teach you &lt;HTML&gt; ! &copy;</p>
-  </body>
+
+//     // Count the 0s in a long integer
+//     function countZeros(num) {
+//         const theString = num.toString();
+//         console.log(theString[0]);
+//         let count = 0;
+  
+//     for (let i = 0; i<theString.length; i++) {
+//         if (theString[i]=="0") count+=1;
+//     }
+  
+//   return count;
+// }
+
+// const a = 5000004500;
+// console.log(countZeros(a));
+    </script>
+</body>
 </html>
