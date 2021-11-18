@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="description" content="my web page" />
+    <title>DOM manipulation</title>
+    <style>
+      body {
+        margin:0;
+        min-height: 100vh;
+      }
+      body, div {
+        display: flex;
+        margin: .5rem;
+        justify-content: center;
+        align-items: center;
+        min-height: 1rem;
+      }
+
+     .grandparent {
+       width: 200px;
+       height: 200px;
+       background-color: hsl(0, 73%, 39%);
+       flex-direction: column;
+     }
+     .parent {
+       width: 130px;
+       height: 130px;
+       background-color: hsl(234, 75%, 35%);
+     }
+     .child {
+       width: 60px;
+       height: 60px;
+       background-color: hsl(143, 75%, 45%);
+     }
+    </style>
+  </head>
+  <body>
+    <div class="grandparent">
+      <div class="parent">
+        <div class="child">HI</div>
+      </div>
+    </div>
+    <script>
+      const grandparent = document.querySelector(".grandparent");
+      const parent = document.querySelector(".parent");
+      const child = document.querySelector(".child");
+
+      grandparent.addEventListener('click', e => {
+        console.log("Grandparent");
+      });
+
+      parent.addEventListener('click', e => {
+        console.log("Parent");
+      },
+      {once:true});
+
+      child.addEventListener('click', e => {
+        console.log("Child");
+      });
+      document.addEventListener('click', e => {
+        console.log("Document");
+      })
+    </script>
+  </body>
+  </html>
