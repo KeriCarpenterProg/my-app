@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <h1>Seeing if a word is an anagram.</h1>
+    <p>The approach is to take in a string.</p>
+    <p>Sort both strings.</p>
+    <p>Compare the resultant strings.</p>
+    <p>I did it!  With lots of lookup on the web and stuff, but I did it in 25 minutes.</p>
+
+    <script>
+        
+        
+        function isAnagram(word1,word2){
+        
+            let split1 = word1.split("");
+            split1 = split1.sort();
+            let split2 = word2.split("");
+            split2 = split2.sort();
+            for(let i=0; i < split1.length; i++) {
+                if(split1[i] != split2[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
+        let original = "listen";
+        let string = "silent";
+
+        let answer = isAnagram(original,string);
+        console.log(answer);
+    
+
+    </script>
+</body>
+</html>
