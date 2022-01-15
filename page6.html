@@ -2,51 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" />
-    <meta name="keywords" content="HTML, CSS" />
-    <meta name="description" content="my web page" />
-    <title>DOM manipulation</title>
-    <style>
-      body {
-        margin:0;
-      }
-      div {
-        display: flex;
-        margin: .5rem;
-        border: 3px solid black;
-        min-height: 1rem;
-        flex-grow: 1;
-      }
-     .grandparent {
-       background-color: hsl(0, 50%, 50%);
-       flex-direction: column;
-     }
-     .parent {
-       background-color: hsl(100, 50%, 50%);
-     }
-     .child {
-       background-color: hsl(200, 50%, 50%);
-     }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Practice Jan 2022</title>
   </head>
-  <body>
-    <div class="grandparent" id="grandparent-id">
-      <div class="parent">
-        <div class="child"></div>
-      </div>
-      <div class="parent">
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-    </div>
+  <body onload="runThisAttheBeginning()">
+    <h1>Work is printed in the console</h1>
     <script>
-      const x = document.querySelector("#child-one");
-      const y = x.nextElementSibling;
-      changeColor(y);
+      function aFunction(ourData) {
+        this.aValue = ourData;
+      }
 
-      function changeColor(element) {
-      element.style.backgroundColor = "#9d10bd";
+      aFunction.somethingNew = function(callback) {
+        const delayTime = Math.floor(Math.random()*100);
+        setTimeout(function() {
+          callback("The function is passing back this string");
+        }.bind(this), 100);
+        // setTimeout(function () {
+        //   callback(84)
+        // }.bind(this), delayTime);
+      }
+      function runThisAttheBeginning() {
+      
+        let anArray = [0,10,20,30,40,50,60];
+
+        for(const value in anArray) {
+          let alakazam = new aFunction(anArray[value]);
+          // console.log(alakazam.aValue);
+          aFunction.somethingNew(console.log);
+        }
       }
     </script>
   </body>
-  </html>
+</html>
