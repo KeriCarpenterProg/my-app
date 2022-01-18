@@ -33,8 +33,40 @@
         let string = "silent";
 
         let answer = isAnagram(original,string);
-        console.log(answer);
+        console.log("The answer to the question");
+        console.log("Is "+original + " an Anagram to the word "+string);
+        console.log("Is "+answer);
     
+
+        // find the smallest integer
+        let largest = 90;
+        let middle = 60;
+        let smallest = 30;
+
+        function theSmallest(a,b,c) {
+            let smallValue = 0;
+            smallValue = Math.min(a,b,c);
+            return smallValue;
+        }
+
+        function withoutMathMin(a,b,c) {
+            let smallestValue = 0;
+            while( a > 0 && b > 0 && c > 0) {
+                a -= 1;
+                b -= 1;
+                c -= 1;
+                smallestValue +=1;
+            }
+            return smallestValue;
+        }
+
+        const smallestAnswer = theSmallest(largest, middle, smallest);
+        const smallestAnswer2 = withoutMathMin(largest,middle,smallest);
+        console.log("The answer to the question");
+        console.log("What is the samllest value of "+largest + " "+middle + " " + smallest+"?");
+        console.log("The value is "+smallestAnswer);
+        console.log("Doing the same operation but without Math.min the answer is "+smallestAnswer2);
+
 
     </script>
 </body>
