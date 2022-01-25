@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening a File</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea {
+            margin-top: 15px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reading a Text File in Javascript</h1>
+    <p>This shows you how to read a text file in via javascript.  Line by line.</p>
+    <p>I followed  <a href="https://youtu.be/dD2rea_fCFk">this You Tube video</a>.</p>
+    <p id="keri">This Text is controlled by the program!</p>
+    <div>
+        <input type="file">
+        <textarea cols="20" rows="20"></textarea>
+    </div>
+   
+    <script>
+        let input = document.querySelector('input');
+        let textarea = document.querySelector('textarea');
+        console.log(input);
+        input.addEventListener('change', () => {
+            let files = input.files;
+
+            const file = files[0];
+
+            if(files.length == 0) return;
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+                const file = e.target.result;
+                const lines = file.split('/\r\n|\n/');
+                textarea.value = lines.join('\n')
+            }
+
+            reader.readAsText(file);
+        })
+
+
+        let printthis = document.getElementById('keri');
+        printthis.innerHTML = "I was able to change the text using javascript!";
+    </script>
+</body>
+</html>
