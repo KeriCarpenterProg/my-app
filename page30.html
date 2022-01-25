@@ -31,6 +31,7 @@
     <script>
         let input = document.querySelector('input');
         let textarea = document.querySelector('textarea');
+        let printthis = document.getElementById('keri');
         console.log(input);
         input.addEventListener('change', () => {
             let files = input.files;
@@ -45,13 +46,14 @@
                 const file = e.target.result;
                 const lines = file.split('/\r\n|\n/');
                 textarea.value = lines.join('\n')
+                printthis.innerHTML = lines.join('\n');
             }
 
             reader.readAsText(file);
         })
 
 
-        let printthis = document.getElementById('keri');
+
         printthis.innerHTML = "I was able to change the text using javascript!";
     </script>
 </body>
