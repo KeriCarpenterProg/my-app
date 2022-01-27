@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <p>I am doing a small project of creating a To Do List.</p>
+    <p>The suggestion came from <a href="https://mikkegoes.com/javascript-projects-for-beginners/">Mikke's blog here</a>.  This task is #15.</p>
+    <img width="400px" src="./images/JavaScript-to-do-list.png" alt="">
+    
+    <div class="container">
+        <div class="header" id="header">
+        </div>
+        <div class="items" id="items">
+        </div>
+
+    </div>
+    <script>
+        let list = [
+            "Answer your emails",
+            "Send Mom a Birthday Card",
+            "Buy more post-its",
+            "Wake up in the morning"
+        ]
+
+        function printHeader() {
+            let nextitem = document.createElement('input');
+            nextitem.innerHTML = `<input type="text" class="input" id="input">`
+            document.getElementById("header").appendChild(nextitem);
+            nextitem = document.createElement('button');
+            nextitem.innerHTML = `<button class="add" id="add">+</button>`;
+            document.getElementById("header").appendChild(nextitem);
+
+        }
+
+        function printList(list) {
+            for(i in list){
+                let nextitem = document.createElement('div');
+                nextitem.innerHTML = `<input type="checkbox" id="task${i}" name="task${i}" value="task${i}">
+                <label for="task${i}"> ${list[i]}</label><br>`
+                document.getElementById("items").appendChild(nextitem);
+            }
+        }
+
+        printList(list);
+        printHeader();
+
+    </script>
+    
+</body>
+</html>
