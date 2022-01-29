@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/script.js" defer></script>
+    <style>
+        img.header {
+            width: 10%;
+            border-radius: 80px;
+            float: left;
+            margin: 20px;
+            margin-right: 10px;
+        }
+
+        img {
+            width: 200px;
+            height: 10%;
+            border-radius: 30px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>DOM practice</h1>
@@ -24,5 +40,30 @@
         <li><a href="https://youtu.be/R8rmfD9Y5-c">Javascript Methods tutorial. </a> I only finished half or less of this video and went back to DOM manipulation videos but it was pretty useful and I'd like to finish.</li>
   <li></li>
     </ol>
+
+<h2>Below is different practice work.</h2>
+    <img class="header" src="images/keri3.jpg"/>
+  
+
+    <img src="images/people1.jpg" id="rainbow" width="50%" />
+    <!-- I did a tutorial on fetch on 4/3/21.  This was it:
+    https://youtu.be/tc8DU14qX6I -->
+
+    <script>
+      catchRainbow()
+        .then((response) => {
+          console.log("yay, it worked!");
+        })
+        .catch((error) => {
+          console.log("error!");
+          console.error(error);
+        });
+
+      async function catchRainbow() {
+        const response = await fetch("images/rainbow.jpg");
+        const blob = await response.blob();
+        document.getElementById("rainbow").src = URL.createObjectURL(blob);
+      }
+    </script>
 </body>
 </html>

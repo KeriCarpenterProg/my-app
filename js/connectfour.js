@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for(var i=0; i < squares.length;i++) {
             squares[i].textContent = i;
             squares[i].onclick = function() {
-                displayCurrentPlayer.textContent= "Value is crazy";
+                displayCurrentPlayer.textContent= ` and Square #${i}`;
             }
         }
         
