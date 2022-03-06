@@ -12,46 +12,79 @@
             margin: 10px;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .container > div {
-            width: 300px;
+
+        .container {
+            border: 5px solid #ffcc5c;
+            display: flex;
+            list-style: none;
+            background-color: #96ceb4;
             padding: 10px;
             text-align: center;
             font-size: 2em;
             color: #ffeead;
-            background-color: #ff6f69;
-        }
-        .container > div:nth-child(1) {
-            background-color: #96ceb4;
-        }
-        .container > div:nth-child(2) {
-            background-color: #ff6f69;
-        }
-        .container > div:nth-child(3) {
-            background-color: #96ceb4;
-        }
-        .container {
-            border: 5px solid #ffcc5c;
-            display: flex;
         }
         .home {
-            flex-basis: 200px;
-            flex-grow: 1;
+            flex: 1 1 200px;
+            order: 3;
+        }
+        .profile {
+            flex: 1 1 200px;
+        }
+        .search {
+            order: 0;
+            flex:1;
+        }
+        @media all and (max-width: 600px) {
+            .container {
+                flex-wrap: wrap;
+            }
+            .container > li {
+                flex: 1 1 50%;
+            }
+            .search > input {
+                text-align: center;
+            }
+        }
+        @media all and (max-width: 400px) {
+            .container {
+                flex-wrap: wrap;
+            }
+            .container > li {
+                flex: 1 1 100%;
+            }
+            .search > input {
+                text-align: center;
+            }
         }
         .logout {
-            flex-basis: 200px;
-            flex-grow: 2;
+            flex: 10 1 200px;
+            order: -1;
+        }
+        .search-input {
+            background: transparent;
+            border: none;
+            background-color: #96ceb4;
+            padding: 10px;
+            font-size: 1.5rem;
+            text-align: left;
+            color: #ffeead;
         }
       
     </style>
 </head>
 <body>
     <h1>Flexbox Practice</h1>
-    <p>This is the <a href="https://youtu.be/-Wlt8NRtOpo">example </a> that I used.  It was great!</p>
+    <p>This is the <a href="https://youtu.be/-Wlt8NRtOpo" target="_blank">example </a> that I used.  It was great!</p>
     <p>It took me through lots of different flexbox scenarios so I could get comfortable with how they work.</p>
     <p>I'm at 30 minutes out of 48 minutes right now.</p>
-    <nav class="container">
-        <div class="home">Home</div>
-        <div class="logout">Logout</div>
+    <nav>
+        <ul class="container">
+            <li>Home</li>
+            <li>Profile</li>
+            <li class="search">
+                <input type="text" class="search-input" placeholder="Search"></li>
+            <li>Logout</li>
+        </ul>
     </nav>
 
     </nav>
