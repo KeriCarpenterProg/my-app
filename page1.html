@@ -13,6 +13,7 @@
             font-family: Arial, Helvetica, sans-serif;
         }
         .container > div {
+            width: 300px;
             padding: 10px;
             text-align: center;
             font-size: 2em;
@@ -31,10 +32,14 @@
         .container {
             border: 5px solid #ffcc5c;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-            align-items: flex-end;
+        }
+        .home {
+            flex-basis: 200px;
+            flex-grow: 1;
+        }
+        .logout {
+            flex-basis: 200px;
+            flex-grow: 2;
         }
       
     </style>
@@ -43,17 +48,11 @@
     <h1>Flexbox Practice</h1>
     <p>This is the <a href="https://youtu.be/-Wlt8NRtOpo">example </a> that I used.  It was great!</p>
     <p>It took me through lots of different flexbox scenarios so I could get comfortable with how they work.</p>
-    <p>I'm at 21 minutes out of 48 minutes right now.</p>
+    <p>I'm at 30 minutes out of 48 minutes right now.</p>
     <nav class="container">
         <div class="home">Home</div>
-        <div class="search">Search</div>
         <div class="logout">Logout</div>
     </nav>
-    <nav class="container">
-        <div>Home</div>
-        <div>Search</div>
-        <div>Logout</div>
-    <nav>
 
     </nav>
 </body>
