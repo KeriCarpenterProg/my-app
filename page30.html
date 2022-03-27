@@ -30,7 +30,8 @@
    <h1>Reading JSON file in Javascript</h1>
    <p>This shows you how to read in a json file using javascript.</p>
    <p>I followed <a href="https://youtu.be/uox7TYW2fEg">this You Tube video.</a>   </p>
-   <p>The work is TBD as of 1/25/22.</p>
+   <p>I am reading a local file data.json which is in this same directory</p>
+   <p id="data">This is where the data will be replaced once it is fetched.</p>
     <script>
         let input = document.querySelector('input');
         let textarea = document.querySelector('textarea');
@@ -54,6 +55,17 @@
 
             reader.readAsText(file);
         })
+
+        let data, results;
+        let lineToPrint = document.getElementById('data');
+        fetch('./data.json')
+            .then(results => results.json())
+            .then(data => {
+                lineToPrint.innerHTML = JSON.stringify(data[0]);
+            });
+
+        
+        
 
     </script>
 </body>
