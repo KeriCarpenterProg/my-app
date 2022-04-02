@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        #cards{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .heading {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom:1.5rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+        }
+        .card {
+            width: 23%;
+            box-shadow: 0 0 4px 3px pink;
+            text-align: center;
+        }
+        .title {
+            font-size: 1.3rem;
+
+        }
+        .images{
+            width:80%;
+        }
+        .category,.price {
+            font-weigth:bold;
+            text-transform: capitalize;
+            margin: 1em;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 class="heading">Fetch Fake Store API</h1>
+    <p>Using Map to print out cards onto a screen.</p>
+    <p>The video is <a href="https://youtu.be/m_vL25vzpiE">here</a>.  I am at minute 16 of 22.  It is geting really good but I must go to bed. 4/1/22.</p>
+    <div id="cards">
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class = "images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+        <div class="card">
+            <h1 class="title">title</h1>
+            <img class="images" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV33cSGaMuhV6fZF0Cz90weRuxkn1WEkTqGw&usqp=CAU" alt="img">
+            <p>description</p>
+            <p class="category">Category</p>
+            <p class="price">price</p>
+        </div>
+
+    </div>
+ <script>
+     fetch('https://fakestoreapi.com/products/').then((data) => {
+         return data.json();
+     }).then((completedata) => {
+         console.log(completedata)
+     })
+ </script>   
+</body>
+</html>

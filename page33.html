@@ -106,7 +106,17 @@
             icon.href = image_icon;
 
         }
+
+        function myFunction(text) {
+          var h = document.createElement("H1");
+          var t = document.createTextNode(text);
+          h.appendChild(t);
+          document.body.append(h);
+          var y = document.getElementById("content");
+          y.appendChild(t);
+        }
         getUser();
+        myFunction("Keri is the best programmer ever!");
     </script>
 </body>
 </html>
