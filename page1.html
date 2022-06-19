@@ -86,7 +86,20 @@
             <li>Logout</li>
         </ul>
     </nav>
+    <p onclick="this.innerHTML='Cereal!'">If you click this, it will turn into the word, "Cereal!"</p>
+    <p onclick="changeColor(this)">If you click it this time, its going to change the background to red.</p>
+    <button id="MyButton">Button for Keri</button>
+    <script>
+        function changeColor(object) {
+            object.style.color = "red";
+        }
 
-    </nav>
+        let a = document.getElementById('MyButton');
+        a.onclick = changeDocumentToRed;
+
+        function changeDocumentToRed() {
+            document.querySelector('button').style.background = "pink";
+        }
+    </script>
 </body>
 </html>
