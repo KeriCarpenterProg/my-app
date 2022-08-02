@@ -1,0 +1,274 @@
+/** 
+* Make flexbox grids super easy!
+* ---
+* @param $cols  —  Number of columns
+* @param $margin  —  Margin with unit
+*/
+
+@mixin flexgrid($cols, $margin) {
+    $width: (100% / $cols);
+    $calc-margin: (($margin * $cols) - $margin) / $cols;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &:after {
+      flex: auto;
+      margin: 0 auto;
+      content: "";
+    }
+    >* {
+      width: calc( #{$width} - #{$calc-margin} );
+      margin-left: $margin / 2;
+      margin-right: $margin/ 2;
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+      &:nth-child(#{$cols}n) {
+        margin-right: 0;
+      }
+      &:nth-child(#{$cols}n + 1) {
+        margin-left: 0;
+      }
+    }
+  }
+  
+  .flexgrid { // Namespace for Demo
+    .container {
+      @media screen and (min-width: 600px) and (max-width: 799px) {
+        @include flexgrid(2, 1rem);
+      }
+      @media screen and (min-width: 800px) and (max-width: 999px) {
+        @include flexgrid(3, 1rem);
+      }
+      @media screen and (min-width: 1000px) {
+        @include flexgrid(4, 1rem);
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* 
+  * Demo Styles
+  */
+  .flexgrid {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga", "kern";
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      font-family: 'Baloo Tamma', cursive;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1;
+      overflow: hidden;
+    }
+  
+    .container {
+      padding: 0 1rem;
+    }
+  
+    .title {
+      font-family: 'Baloo Tamma', cursive;
+      font-size: 300%;
+      padding: 2rem 1rem;
+    }
+  
+    .thing {
+      color: #FEFEFE;
+      font-size: 200%;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2.5px 5px rgba(25, 25, 25, 0.1);
+      background: #1dd2af;
+      background: linear-gradient(to bottom, #1dd2af, #17a689);
+      &:hover {
+        animation-name: shake;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      &:nth-child(1), 
+      &:nth-child(4), 
+      &:nth-child(7),
+      &:nth-child(10) {
+        background: #fed26a;
+        background: linear-gradient(to bottom, #fed26a, #fec238);
+        &:hover {
+          animation-name: bounce;
+        }
+      }
+      &:nth-child(2), 
+      &:nth-child(5), 
+      &:nth-child(9),
+      &:nth-child(14) {
+        background: #7ad0ff;
+        background: linear-gradient(to bottom, #7ad0ff, #47beff);
+        &:hover {
+          animation-name: swing;
+        }
+      }
+      &:nth-child(3), 
+      &:nth-child(6), 
+      &:nth-child(12) {
+        background: #df6974;
+        background: linear-gradient(to bottom, #df6974, #d73f4e);
+        &:hover {
+          animation-name: tada;
+        }
+      }
+    }
+  
+    .emoji {
+      font-size: 200%;
+      transform: translateY(20%);
+    }
+  
+    @keyframes bounce {
+      from, 20%, 53%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0);
+      }
+  
+      40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -30px, 0);
+      }
+  
+      70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -15px, 0);
+      }
+  
+      90% {
+        transform: translate3d(0,-4px,0);
+      }
+    }
+  
+  
+    @keyframes shake {
+      from, to {
+        transform: translate3d(0, 0, 0);
+      }
+  
+      10%, 30%, 50%, 70%, 90% {
+        transform: translate3d(-10px, 0, 0);
+      }
+  
+      20%, 40%, 60%, 80% {
+        transform: translate3d(10px, 0, 0);
+      }
+    }
+  
+    .shake {
+      animation-name: shake;
+    }
+  
+  
+    @keyframes swing {
+      20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+      }
+  
+      40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+      }
+  
+      60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+      }
+  
+      80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+      }
+  
+      to {
+        transform: rotate3d(0, 0, 1, 0deg);
+      }
+    }
+  
+  
+    @keyframes tada {
+      from {
+        transform: scale3d(1, 1, 1);
+      }
+  
+      10%, 20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+      }
+  
+      30%, 50%, 70%, 90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+      }
+  
+      40%, 60%, 80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+      }
+  
+      to {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+  }
