@@ -123,6 +123,7 @@ button {
 }
 
 .navCenter {
+    align-self: center;
     height: auto;
     font-size: 3rem;
     padding: 10px;
@@ -130,6 +131,7 @@ button {
 }
 
 .navNext {
+    align-self: flex-end;
     height: auto;
     font-size: 1rem;
     padding: 10px;
