@@ -137,7 +137,9 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
 }
-
+.cards {
+    align-items: left;
+}
 .card {
     display: flex;
     background: linear-gradient(
