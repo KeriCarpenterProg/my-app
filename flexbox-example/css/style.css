@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+:root {
+    --primary-color: #047aed;
+    --secondary-color: lightblue;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -33,9 +38,9 @@ p {
 img {
     width: 100%;
 }
-
+/* Nav Bar Styling */
 .navbar {
-    background-color: #047aed;
+    background-color: var(--primary-color);
     color: white;
     height: 70px;
 }
@@ -44,7 +49,8 @@ img {
     display: flex;
 }
 
-.navbar a {
+.navbar a,
+.navbar li {
     color: white;
     padding: 10px;
     margin: 0 5px;
@@ -53,16 +59,74 @@ img {
 .navbar a:hover {
     border-bottom: 2px yellow solid;
 }
+/* Showcase */
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.showcase p {
+    margin: 10px 0;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+.showcase .grid {
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 300px;
+    z-index: 100;
+    justify-self: flex-end;
+}
+
+/* Utilities */
 .container {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
     overflow: auto;
     padding: 0 40px;
 }
 
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 10px;
+}
 .flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+}
+
+.btn {
+    background-color: gray;
+    color: white;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.btn-outline {
+    border: 3px solid black;
 }
