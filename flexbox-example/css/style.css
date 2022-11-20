@@ -79,35 +79,6 @@ img {
     gap: 30px;
     overflow: visible;
 }
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* Margin */
-.my-1 {
-    margin: 1rem 0;
-}
-.my-2 {
-    margin: 1.5rem 0;
-}
-.my-3 {
-    margin: 2rem 0;
-}
-.my-4 {
-    margin: 3rem 0;
-}
-.my-5 {
-    margin: 4rem 0;
-}
 
 
 .showcase-form {
@@ -155,7 +126,15 @@ img {
 }
 
 .stats-heading {
-    padding: 10px 0;
-    margin: 20px 0;
+    max-width: 500px;
+    margin: auto;
 }
 
+.stats .grid h3 {
+    font-size: 35px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bp;d'
+}
