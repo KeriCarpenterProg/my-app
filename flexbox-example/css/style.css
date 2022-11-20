@@ -88,6 +88,28 @@ img {
     height: 100%;
 }
 
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Margin */
+.my-1 {
+    margin: 1rem 0;
+}
+.my-2 {
+    margin: 1.5rem 0;
+}
+.my-3 {
+    margin: 2rem 0;
+}
+.my-4 {
+    margin: 3rem 0;
+}
+.my-5 {
+    margin: 4rem 0;
+}
+
+
 .showcase-form {
     position: relative;
     top: 60px;
@@ -97,36 +119,43 @@ img {
     justify-self: flex-end;
 }
 
-/* Utilities */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    overflow: auto;
-    padding: 0 40px;
+.showcase-form .form-control {
+    margin:30px 0px;
 }
 
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    color: black;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
-    padding: 20px;
-    margin: 10px;
-}
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+    border:0;
+    border-bottom: 1px solid#b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
 }
 
-.btn {
-    background-color: gray;
-    color: white;
-    margin: 10px 0;
-    text-align: center;
+.showcase-form input:focus {
+    outline: none;
 }
 
-.btn-outline {
-    border: 3px solid black;
+.showcase::before,
+.showcase::after {
+    content:'';
+    position: absolute;
+    height: 100px;
+    background: white;
+    width: 100%;
+    bottom: -30px;
+    right: 0;
+    left: 0;
+    transform: skewY(-3deg);
 }
+
+/* Stats */
+.stats {
+    padding-top: 100px;
+}
+
+.stats-heading {
+    padding: 10px 0;
+    margin: 20px 0;
+}
+

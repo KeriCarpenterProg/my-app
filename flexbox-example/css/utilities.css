@@ -1,0 +1,46 @@
+/* Utilities */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 10px;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.btn:hover {
+    transform: scale(0.90);
+}
+
+.text-center {
+    text-align: center;
+}
