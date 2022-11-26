@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary-color: #047aed;
+    --secondary-color: lightblue;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.2;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+/* Nav Bar Styling */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a,
+.navbar li {
+    color: white;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px yellow solid;
+}
+/* Showcase */
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.showcase p {
+    margin: 10px 0;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+.showcase .grid {
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 300px;
+    z-index: 100;
+    justify-self: flex-end;
+}
+
+.showcase-form .form-control {
+    margin:30px 0px;
+}
+
+.showcase-form input[type="text"],
+.showcase-form input[type="email"] {
+    border:0;
+    border-bottom: 1px solid#b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after {
+    content:'';
+    position: absolute;
+    height: 100px;
+    background: white;
+    width: 100%;
+    bottom: -30px;
+    right: 0;
+    left: 0;
+    transform: skewY(-3deg);
+}
+
+/* Stats */
+.stats {
+    padding-top: 100px;
+}
+
+.stats-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid h3 {
+    font-size: 35px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bp;d'
+}
+
+/* Cli area */
+
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr)
+}
+
+.cli .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
