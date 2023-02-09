@@ -1,0 +1,32 @@
+body {
+  background: lightgray;
+  font-family:sans-serif;
+  color:#fff;
+}
+
+/* Defines the class that wraps the slider */
+.wrapper{
+  width:100%;
+  padding-top: 20px;
+  text-align:center;
+}
+
+
+/* Defines the width of the carousel and centers it on the page */
+.slick-carousel {
+    margin: 0 auto;
+    width: 95%;
+  }
+  
+  /* The width of each slide */
+  .slick-slide {
+    margin: 20px;
+  }
+  .slick-slide img{
+    width:100%;
+    border: 2px solid #fff;
+  }
+  /* Color of the arrows */
+  .slick-next::before, .slick-prev::before {
+    color: rgb(54, 27, 18);
+  }

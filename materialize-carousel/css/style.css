@@ -1,0 +1,10 @@
+.middle-indicator{
+    position:absolute;
+    top:50%;
+    }
+ .middle-indicator-text{
+    font-size: 6rem !important;
+   }
+ a.middle-indicator-text{
+     color:white !important;
+   }
